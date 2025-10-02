@@ -1,1 +1,154 @@
 @charset "UTF-8";
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;line-height: 1.6;
+    padding: 2em;
+    margin: auto;
+    width: 1350px;
+   
+}
+
+  .nowrap {
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-column: 1fr 2fr 1fr;
+    grid-row: 1fr 2fr 1fr;
+    
+}
+
+header {
+   
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+}
+
+.cabecalho {
+    width: 500px;
+    height: 250px;
+    display: flex;
+    place-self: center;
+    margin-top: 15px;
+}
+
+aside.esquerdo {
+  
+    display: flex;
+    place-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.esquerdo01 {
+    width: 330px;
+    height: 430px;
+    margin-left: 18px;
+    
+}
+
+.direito02 {
+    width: 300px;
+    height: 430px;
+    margin-right: 18px;
+}
+
+main {
+     
+    
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    position: relative;
+    padding: 10px;
+    text-overflow: ellipsis;
+    
+
+}
+
+main > img {
+    display: flex;
+    margin-top: 5px;
+    position: absolute;
+    margin-top: -280px;
+    
+
+}
+main > a {
+    width: 100px;
+    height: 50px;
+    bottom:80%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+main > a:hover {
+
+    color: aqua ;
+
+}
+
+main > p {
+    display: block;
+    color: white;
+    margin-bottom: 20px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    width: 70%;
+    text-align: justify;
+    word-spacing: 2px;
+    
+    
+}
+
+.tab {
+    margin-top: 180px;
+}
+
+
+.topo {
+    width: 400px;
+    height: 50px;
+    margin-top: -380px;
+    margin-bottom: 50px;
+}
+
+aside.direito {
+   
+    display: flex;
+    align-items: center;
+    grid-column: 3/ 4;
+    grid-row: 2 / 4;
+}
+
+footer {
+    color: white;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    display: flex;
+    place-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
