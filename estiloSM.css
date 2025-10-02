@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background: linear-gradient(
+    135deg, /* direção: diagonal */
+    #020659,
+    #328BD9,
+    #44AFF2,
+    #6BD9F2,
+    #79F2F2
+  );
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.container {
+    width: 1350px; /* largura fixa, igual do notebook */
+    margin: 0 auto; /* centraliza na tela maior */
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto auto;
+    padding: 5px;
+    height: 100vh;
+    
+
+
+}
+
+header {
+    
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    text-align: center;
+    margin-top: 10px;
+
+    
+}
+
+.aside01 {
+   
+
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+  
+
+.flutuante {
+   max-width: 100%;         /* limita ao tamanho da área */
+  height: auto;            /* mantém proporção */
+  object-fit: contain;     /* garante que a imagem não estique */
+  animation: floatY 3s ease-in-out infinite;
+}
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+main {
+    
+    
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    
+    hyphens: auto;           /* Hifenização automática em navegadores que suportam */
+    padding: 20px;
+    border-radius: 20px;
+    line-height: 1.5; 
+}
+
+main p {
+    color: white;
+    text-align: justify;
+    font-family:'Courier New', Courier, monospace;
+    
+    
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    font-family:"Michroma", sans-serif;
+}
+#paragrafo-1 {
+    margin-top: 80px;
+}
+
+#paragrafo-2 {
+    margin-bottom: 50px;
+}
+
+
+.aside02 {
+    
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.aside01, main, .aside02 {
+    height: 100%;
+}
+
+.button-wrapper {
+ grid-column: 1 / -1;
+  grid-row: 3 / 4; /* agora em sua própria linha */
+  text-align: center;
+  padding: 20px 10px;
+  transition: transform 0.3s ease-in-out;
+
+  
+}
+
+.botao-link {
+text-decoration: none;
+color: white;
+font-family: "Michroma", sans-serif;
+}
+
+.botao-link:hover {
+  
+  color: #328BD9;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020659; /* cor de fundo escura */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #328BD9, #44AFF2, #6BD9F2, #79F2F2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #79F2F2, #6BD9F2, #44AFF2, #328BD9);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #44AFF2 #020659;
+}
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    grid-column: 1 / -1;
+  grid-row: 4 / 5; /* movido para a linha seguinte */
+  text-align: center;
+  color: white;
+}
