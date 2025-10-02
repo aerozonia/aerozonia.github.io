@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="estiloGaleria.css">
+    <link rel="stylesheet" href="lixostilo4.css">
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Libertinus+Keyboard&family=Passero+One&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>GALERIA</h1>
+        <img src="./imagens/computer (2).gif" alt="gif computer" height="300px" width="400px">
+    
+    </header>
+    <nav>
+        <ul>
+            <li>
+                
+                <a href="sobremim.html">[ SOBRE MIM ] </a>
+
+            </li>
+            <li><a href="https://aminaesia.blogspot.com/">[ BLOG ]</a></li>
+            <li><a href="https://aerozonia.atabook.org/">[ GUESTB. ]</a></li>
+            <li><a href="creditos.html">[ CREDITOS ]</a></li>
+        </ul>
+  
+   <div class="gallery">
+
+<div class="gallery-item">
+  
+    <img src="./imagens/Winty armamenter 03.jpg" alt="Winter armamenter 01" width="600" height="400">
+  
+  <div class="desc">01</div>
+</div>
+
+<div class="gallery-item">
+
+    <img src="./imagens/My annoying demon.jpg" alt="My annoying demon" width="600" height="400">
+  
+  <div class="desc">00</div>
+</div>
+
+<div class="gallery-item">
+
+    <img src="./imagens/masterchef.jpg" alt="Masterchef" width="600" height="400">
+  
+  <div class="desc">001</div>
+</div>
+
+<div class="gallery-item">
+
+    <img src="./imagens/REVISTA ESBOÇO.jpg" alt="Revista" width="600" height="400">
+  
+  <div class="desc">02</div>
+</div>
+
+</div>
+
+<!-- COLUNA 2 -->
+
+<div class="gallery">
+
+<div class="gallery-item">
+  
+    <img src="./imagens/FANART SAVAGE WINTER.jpg" alt="Winter savage era" width="600" height="400">
+  
+  <div class="desc">03</div>
+</div>
+
+<div class="gallery-item">
+  
+    <img src="./imagens/07.png" alt="PROJETO 01 - H&M" width="600" height="400">
+
+  <div class="desc">04</div>
+</div>
+
+<div class="gallery-item">
+  
+    <img src="./imagens/cover 01.02.png" alt="GOTTA BE YOU COVER FANFIC WINRINA" width="600" height="400">
+
+  <div class="desc">003</div>
+</div>
+
+<div class="gallery-item">
+  
+    <img src="./imagens/NewCanvas13.jpg" alt="Capa descartada (ou não) da história MINHA DOCE CRIATURA" width="600" height="400">
+  
+  <div class="desc">004</div>
+</div>
+
+</div>
+
+    </nav>
+    <div class="voltar-inicio">
+  <a href="index.html">VOLTAR </a>
+</div>
+    <footer>
+      <p>aerozonia 00:00 - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- MODAL -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgModal">
+  <div id="caption"></div>
+</div>
+
+    <script>
+  // Pega o modal
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("imgModal");
+  const captionText = document.getElementById("caption");
+
+  // Pega todas as imagens da galeria
+  const imgs = document.querySelectorAll(".gallery-item img");
+
+  imgs.forEach((img) => {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  // Fecha o modal
+  const span = document.getElementsByClassName("close")[0];
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+</script>
+</body>
+</html>
