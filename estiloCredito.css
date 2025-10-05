@@ -9,6 +9,11 @@
 body {
     background-color: #0D0D0D;
     font-family: 'Courier New', Courier, monospace;
+    cursor: url('./imagens/cursorCREDITO01.png'), auto;
+}
+
+a {
+    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
 }
 
 /* Centraliza todo o conteúdo da página */
