@@ -8,6 +8,7 @@
 
 body {
   background-color: black;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .conteiner {
@@ -37,8 +38,8 @@ header {
 }
 
 header > img {
-    width: 450px;
-    height: 85px;
+    width: 410px;
+    height: 80px;
 }
 
 /* NAVBAR */
@@ -80,7 +81,7 @@ header > img {
 
  main > img {
     
-    height: 350px;
+    height: 250px;
    
 
    
