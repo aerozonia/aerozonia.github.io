@@ -9,11 +9,11 @@
 body {
   background-color: black;
   font-family: 'Courier New', Courier, monospace;
-  cursor: url('./imagens/seta001mainRED.png'), auto;
+  cursor: url('./imagens/seta02oficial.png'), auto;
 }
 
 a {
-    cursor: url('./imagens/cursor2verde.png'), pointer;
+    cursor: url('./imagens/seta01oficial.png'), pointer;
 }
 
 .conteiner {
