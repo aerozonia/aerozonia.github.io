@@ -8,11 +8,16 @@
 
 body {
     background-color: black;
+    cursor: url('./imagens/cursor1.png'), auto;
     font-family: 'Courier New', Courier, monospace;line-height: 1.6;
     padding: 2em;
     margin: auto;
     width: 1350px;
    
+}
+
+a {
+    cursor: url('./imagens/cursor2.png'), pointer;
 }
 
   .nowrap {
