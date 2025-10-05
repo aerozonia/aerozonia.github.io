@@ -13,7 +13,7 @@ body {
 }
 
 a {
-    cursor: url('./imagens/seta02mainRED.png'), pointer;
+    cursor: url('./imagens/cursor2verde.png'), pointer;
 }
 
 .conteiner {
