@@ -60,6 +60,11 @@ aside.esquerdo {
     width: 330px;
     height: 430px;
     margin-left: 18px;
+    width: 330px;
+    height: 430px;
+    margin-left: 18px;
+    animation: flutuar 3s ease-in-out infinite;
+    animation-delay: 1.5s;
     
 }
 
