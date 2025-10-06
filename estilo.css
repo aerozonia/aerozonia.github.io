@@ -64,33 +64,48 @@ aside.esquerdo {
 }
 
 .direito02 {
-    width: 300px;
+     width: 300px;
     height: 430px;
     margin-right: 18px;
+    width: 300px;
+  height: 430px;
+  margin-right: 18px;
+
+  /* ANIMAÇÃO AQUI */
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* sobe */
+  }
+  100% {
+    transform: translateY(0); /* volta */
+  }
 }
 
 main {
      
     
-    width: 90%;
+   width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    grid-column: 2 / 3;
-    grid-row: 2 / 4;
+    justify-content: center;
     position: relative;
     padding: 10px;
-    text-overflow: ellipsis;
-    
 
 }
 
 main > img {
-    display: flex;
-    margin-top: 5px;
-    position: absolute;
-    margin-top: -280px;
+      display: block;
+     margin: 0 auto 20px auto;
+    position: static;
+    margin-top: 0;
     
 
 }
@@ -112,17 +127,23 @@ main > a:hover {
 
 }
 
+main > p:first-of-type {
+    margin-top: 5px; /* bem pertinho da imagem topo */
+}
+
+
 main > p {
-    display: block;
+   margin-bottom: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
-    margin-bottom: 20px;
     font-family:'Courier New', Courier, monospace;
     font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
-    width: 70%;
-    text-align: justify;
     word-spacing: 2px;
+    text-align: justify;
     
     
 }
@@ -133,10 +154,10 @@ main > p {
 
 
 .topo {
-    width: 400px;
+     width: 400px;
     height: 50px;
-    margin-top: -380px;
-    margin-bottom: 50px;
+    display: block;
+    margin: 50px auto 15px auto;
 }
 
 aside.direito {
