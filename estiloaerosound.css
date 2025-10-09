@@ -19,9 +19,15 @@ html {
     
     }
 
+html a:hover {
+   cursor: url('./imagens/cursor2.png'), pointer;
+}    
+
 a:hover {
   cursor: url('./imagens/cursor2.png'), pointer;
 }
+
+
 
     /* Header */
     .header-container {
