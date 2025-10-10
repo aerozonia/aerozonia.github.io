@@ -9,7 +9,7 @@
 body {
   background-color: black;
   font-family: 'Courier New', Courier, monospace;
-  cursor: url('./imagens/officialcursor01.png'), auto;
+  cursor: url('./imagens/pontinhamain.cur'), auto;
 }
 
 a {
