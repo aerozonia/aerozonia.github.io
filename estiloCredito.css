@@ -9,7 +9,7 @@
 body {
     background-color: #0D0D0D;
     font-family: 'Courier New', Courier, monospace;
-    cursor: url('./imagens/cursorCREDITO01.png'), auto;
+    cursor: url('./imagens/pontinhacredito.cur'), auto;
 }
 
 a {
