@@ -8,7 +8,7 @@
 
 body {
     background-color: black;
-    cursor: url('./imagens/cursor1.png'), auto;
+    cursor: url('./imagens/cursorpontinha.png'), auto;
     font-family: 'Courier New', Courier, monospace;line-height: 1.6;
     padding: 2em;
     margin: auto;
@@ -17,7 +17,7 @@ body {
 }
 
 a {
-    cursor: url('./imagens/cursor2.png'), pointer;
+    cursor: url('./imagens/cursormaozinha.png'), pointer;
 }
 
   .nowrap {
