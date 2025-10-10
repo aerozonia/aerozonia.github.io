@@ -5,7 +5,7 @@
     }
 
    html {
-    cursor: url('./imagens/alternate.cur'),auto;
+    cursor: url('./imagens/pontinha.cur'),auto;
    }
 
     body {
@@ -25,7 +25,7 @@
 
 
     html a:hover {
-      cursor: url('./imagens/Link.cur'), pointer;
+      cursor: url('./imagens/dedinho.cur'), pointer;
     }
 
 
