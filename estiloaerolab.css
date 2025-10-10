@@ -15,11 +15,11 @@ body {
       /*max-width: 600px; */
       margin: 0 auto;
       line-height: 1.6;
-      cursor: url('./imagens/officialcursor01.png'), auto;
+      cursor: url('./imagens/cursoraerolab.gif'), auto;
     }
     
     a {
-         cursor: url('./imagens/Officialcursor02.png'), pointer;
+         cursor: url('./imagens/download.ico'), pointer;
     }
 
     nav {
