@@ -5,12 +5,16 @@
     }
 
 html {
-    cursor: url('./imagens/cursor1.png'), auto;
+    cursor: url('./imagens/cursor\ \(1\).png'), auto;
 }
 
     body {
       font-family: 'Courier New', monospace;
-      background-color: #191A26;
+      background-image: url('./imagens/MusiciansDay_background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
       color: #CED7F2;
       margin: 0 auto;
       line-height: 1.6;
@@ -20,11 +24,11 @@ html {
     }
 
 html a:hover {
-   cursor: url('./imagens/cursor2.png'), pointer;
+   cursor: url('./imagens/pointer.png'), pointer;
 }    
 
 a:hover {
-  cursor: url('./imagens/cursor2.png'), pointer;
+  cursor: url('./imagens/pointer.png'), pointer;
 }
 
 
@@ -81,15 +85,15 @@ a:hover {
 
     /* Navegação com texto rolando */
     nav.marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      background-color: #CED7F2;
-      border-radius: 5px;
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      margin: 1rem 0;
+        overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background-color: #CED7F2;
+  border-radius: 5px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0 0 1rem 0;
     }
 
     nav.marquee-container .marquee {
@@ -210,6 +214,14 @@ a:hover {
       body {
         padding: 0 0.5rem;
       }
+
+      .header-container {
+    height: auto; /* ou ajuste menor se quiser menos espaço */
+  }
+
+  nav.marquee-container {
+    margin: 0 0 1rem 0;
+  }
 
       .header-overlay {
         width: 50%;
