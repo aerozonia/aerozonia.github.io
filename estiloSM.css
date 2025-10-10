@@ -19,11 +19,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
-  cursor: url('./imagens/cursor1.png'), auto;
+  cursor: url('./imagens/alternate.cur'), auto;
 }
 
 a {
-    cursor: url('./imagens/cursor2.png'), pointer;
+    cursor: url('./imagens/Link.cur'), pointer;
 }
 
 .container {

@@ -8,11 +8,11 @@
 
 body {
   background-color: rgb(9, 9, 54);
-  cursor: url('./imagens/cursorCREDITO01.png'), auto;
+  cursor: url('./imagens/alternate.cur'), auto;
 }
 
 a {
-    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
+    cursor: url('./imagens/Link.cur'), pointer;
 }
 
 
@@ -87,7 +87,7 @@ div.gallery-item {
   height: 150px;
   overflow: hidden;
   position: relative;
-  cursor: url('./imagens/cursorCREDITO02.png'), pointer;
+  cursor: url('./imagens/Link.cur'), pointer;
 
 }
 
