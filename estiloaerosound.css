@@ -86,14 +86,14 @@ a:hover {
     /* Navegação com texto rolando */
     nav.marquee-container {
         overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  background-color: #CED7F2;
-  border-radius: 5px;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  margin: 0 0 1rem 0;
+        white-space: nowrap;
+        position: relative;
+        background: linear-gradient(90deg, #513973, #3E3159, #383A59, #2E4559, #284B59);
+        border-radius: 5px;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        margin: 0 0 1rem 0;
     }
 
     nav.marquee-container .marquee {
@@ -101,7 +101,7 @@ a:hover {
       padding-left: 100%;
       animation: scroll-left 15s linear infinite;
       font-weight: bold;
-      color: #313E59;
+      color: #CED7F2;
     }
 
     @keyframes scroll-left {
