@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bebas+Neue&family=Caveat:wght@400..700&family=Changa:wght@200..800&family=Kalam:wght@300;400;700&family=Libertinus+Keyboard&family=Michroma&family=Passero+One&family=Passion+One:wght@400;700;900&family=Rampart+One&family=Saira:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&family=Special+Elite&family=Squada+One&family=Sriracha&family=Story+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+
+
     <div class="container">
     <!-- Header com imagem + sobreposição animada -->
     <div class="header-container">
@@ -25,6 +27,16 @@
 
 
     <!-- Posts -->
+
+    <!-- ESTILO POST COM IMAGEM // adicionado esse class="post-img clicable-image" width="120px" height="120px"--> 
+      <div class="post">
+        <img src="./imagens/FANART SAVAGE WINTER.jpg" alt="Imagem da natureza" class="post-img clickable-image" width="120px" height="120px" />
+        <div class="post-text">
+          <time>17 de outubro de 2025</time>
+          <p>Isto se trata apenas de um teste para postagem de imagens sobre meus personagens originais (OCs) muito em breve.</p>
+        </div>
+      </div>
+   <!-- FIM -->
 
    <!-- PRIMEIRO POST--> 
     <div class="post">
@@ -47,6 +59,37 @@
       aerozonia 00:00 — Todos os direitos reservados
     </footer>
   </div>
+    <!-- Modal único -->
+<div id="image-modal" class="modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modal-img" alt="" />
+</div>
+
+<script>
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.modal-close');
+
+  document.querySelectorAll('.clickable-image').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.classList.add('show');
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      modalImg.src = '';
+    }
+  });
+</script>
     
 </body>
 </html>
