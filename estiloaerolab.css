@@ -170,23 +170,6 @@ body {
   }
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 0 0.5rem;
-    .post {
-    flex-direction: column; /* empilha verticalmente */
-    align-items: center;    /* centraliza horizontalmente */
-  }
-
-  }
-
-   .post-img {
-    width: 120px;  /* ou o tamanho que quiser */
-    height: auto;
-    margin-bottom: 1rem; /* espaço abaixo da imagem */
-    
-  }
-}
 
 .marquee-container {
   overflow: hidden;
@@ -241,9 +224,17 @@ body {
 }
 
 .post {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+   background-color: #A772F2;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border: 2px solid #6805F2;
+  margin-bottom: 1.5rem;
+  font-family: "Kalam", cursive;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* REMOVE qualquer estrutura de coluna */
+  display: block;
   
 }
 
@@ -265,34 +256,42 @@ body {
 }
 
 
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
 
- @media (max-width: 600px) {
-      .post {
-        flex-direction: column;
-        padding: 1rem;
-        flex-direction: column;
-    align-items: center; /* centraliza itens no eixo horizontal */
+  .header-overlay {
+    width: 40%;   
+    max-width: 180px;
+  }
+
+  /* POSTS COM IMAGEM */
+  .post:has(.post-img) {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-      }
-      .post-img {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 1rem;
-        border-radius: 5px;  /* manter arredondado */
-    border: 2px solid #6805F2; /* manter borda */
-      }
+  }
 
-      .post-text {
+  .post-img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1rem auto;
+    border-radius: 5px;
+    border: 2px solid #6805F2;
+  }
+
+  .post-text {
     width: 100%;
   }
 
   .post time {
-    display: block; /* garante que a data fique numa linha própria */
+    display: block;
     margin-bottom: 0.5rem;
-    text-align: center; /* centraliza o texto da data */
+    text-align: center;
   }
 }
-    
 
     /* Modal ---- ADICIONADO  */
   .modal {
@@ -321,3 +320,12 @@ body {
     cursor: pointer;
     user-select: none;
   }
+
+
+
+
+  .post:has(.post-img) {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
