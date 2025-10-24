@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden; /* remove scroll horizontal */
+  max-width: 100vw;   /* garante que nada ultrapasse a largura da tela */
+}
+
 body {
   background-color: rgb(9, 9, 54);
   cursor: url('./imagens/pontinhagaleria.cur'), auto;
@@ -236,4 +241,15 @@ footer {
 * {
   scrollbar-width: thin;
   scrollbar-color: #79F2F2 #020659;
+}
+
+div.gallery {
+  max-width: 100vw;
+  padding: 0 5px; /* opcional: evita borda colada na tela */
+  box-sizing: border-box;
+}
+
+/* Ajuste das imagens para não gerar overflow */
+div.gallery-item {
+  box-sizing: border-box; /* garante que border e padding não aumentem a largura */
 }
