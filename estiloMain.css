@@ -10,6 +10,7 @@ body {
   background-color: black;
   font-family: 'Courier New', Courier, monospace;
   cursor: url('./imagens/pontinhamain.cur'), auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -27,6 +28,7 @@ a {
     "main   aside"
     "main   aside"
     "footer footer";
+     width: 100%;
     
 
 }
@@ -43,8 +45,9 @@ header {
 }
 
 header > img {
-    width: 410px;
-    height: 75px;
+        max-width: 300px; /* limite máximo da logo */
+    width: 80%;        /* ocupa 80% do container se a tela for menor */
+    height: auto;  
 }
 
 /* NAVBAR */
@@ -118,8 +121,8 @@ nav ul li:hover a {
 
  aside > ul > li > img {
 
-    height: 40px;
-    width:  40px;
+      max-width: 100%;
+    height: auto;
     
  }
 
