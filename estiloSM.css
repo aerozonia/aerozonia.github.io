@@ -21,7 +21,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    font-family: 'Courier New', monospace;
+    font-family: 'kalam',coursive;
     cursor: url('./imagens/pontinhagaleria.cur'), auto;
 }
 
@@ -185,7 +185,7 @@ main p {
 footer {
     grid-column: 1 / -1;
     text-align: center;
-    font-family: 'Courier New', monospace;
+    font-family: "Michroma", sans-serif;
     color: #020659;
     padding: 20px 0;
 }
