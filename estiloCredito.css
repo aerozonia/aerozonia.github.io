@@ -28,6 +28,8 @@ header {
     margin-bottom: 100px;
     text-align: center; 
     font-family:"Michroma", sans-serif;
+    word-wrap: break-word; /* garante quebra de linha se precisar */
+    overflow-wrap: break-word;
 }
 
 /* NAV */
@@ -168,9 +170,11 @@ footer {
     }
 
     header {
-        font-size: 50px;
+        font-size: 40px; /* reduz tamanho para mobile */
         margin-bottom: 50px;
         text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     nav ul {
@@ -204,7 +208,7 @@ footer {
 
     /* BOTÃO VOLTAR - MOBILE */
     #btn-voltar {
-        display: block;       /* ocupa mais largura */
+        display: block;       
         width: 80%;           
         padding: 12px 0;      
         font-size: 12px;      
