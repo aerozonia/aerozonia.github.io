@@ -20,20 +20,17 @@ a {
     cursor: url('./imagens/DEDO.cur'), pointer;
 }
 
-
 header {
   color: aqua;
   text-align: center;
   margin-top: 30px;
   margin-bottom: 50px;
   font-family: "Libertinus Keyboard", system-ui;
-
 }
 
 /* CONFIG NAV*/
 
 nav ul {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,36 +40,29 @@ nav ul {
   gap: 10px;
   list-style-type: none;
   margin-bottom: 100px;
-
 }
 
 nav ul li {
   cursor: pointer;
   transition: transform 0.3s ease;
-  
 }
 
 nav ul li a {
-    color: aqua;
+  color: aqua;
   text-decoration: none;
   transition: color 0.3s ease; 
 }
 
 nav ul li a:hover {
- 
   color: white;
 }
 
 nav ul li:hover {
   color: rgb(216, 250, 65);
   transform: scale(1.1);
-  
 } 
 
-
-
 /* FIM CONFIG NAV */
-
 
 /* INICIO CONFIG. GALERIA IMAGENS */
 
@@ -80,8 +70,9 @@ div.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
-
+  max-width: 100vw;
+  padding: 0 5px; /* evita borda colada na tela */
+  box-sizing: border-box;
 }
 
 div.gallery-item {
@@ -93,9 +84,9 @@ div.gallery-item {
   overflow: hidden;
   position: relative;
   cursor: url('./imagens/DEDO.cur'), pointer;
-
+  box-sizing: border-box; /* garante que border e padding não aumentem a largura */
+  max-width: 100%; /* impede que ultrapasse a tela */
 }
-
 
 div.gallery-item img {
   width: 100%;
@@ -106,8 +97,7 @@ div.gallery-item img {
 }
 
 .gallery-item:hover {
-  border: 3px solid;
-  border-color: white; /* Muda a cor da borda */
+  border: 3px solid white; /* Muda a cor da borda */
   transform: scale(1.05); /* Zoom leve */
 }
 
@@ -115,6 +105,8 @@ div.gallery-item div.desc {
   padding: 15px;
   text-align: center;
 }
+
+/* MEDIA QUERIES GALERIA */
 
 @media only screen and (max-width: 768px) {
   div.gallery-item {
@@ -151,16 +143,16 @@ div.gallery-item div.desc {
   color: rgb(9, 9, 54); /* cor do fundo para contraste */
 }
 
-
-/* RODAPE*/
+/* RODAPE */
 
 footer {
   color: aqua;
   text-align: center;
   margin-top: 50px;
   font-family:'Courier New', Courier, monospace;
-
 }
+
+/* MODAL */
 
 .modal {
   display: none; /* modal começa escondido! */
@@ -208,6 +200,9 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* SCROLLBAR CUSTOMIZADO */
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -243,29 +238,15 @@ footer {
   scrollbar-color: #79F2F2 #020659;
 }
 
-div.gallery {
-  max-width: 100vw;
-  padding: 0 5px; /* opcional: evita borda colada na tela */
-  box-sizing: border-box;
-}
+/* ESCONDER SCROLLBAR NO MOBILE SEM PERDER ROLAGEM */
+@media only screen and (max-width: 768px) {
+  html::-webkit-scrollbar {
+    width: 0px; /* remove a barra de rolagem no WebKit */
+    background: transparent;
+  }
 
-/* Ajuste das imagens para não gerar overflow */
-div.gallery-item {
-  box-sizing: border-box; /* garante que border e padding não aumentem a largura */
-}
-
-
-div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centraliza horizontalmente */
-  max-width: 100vw;
-  margin: 0 auto; /* centraliza a própria div */
-  padding: 0 5px; /* respiro nas laterais */
-  box-sizing: border-box;
-}
-
-div.gallery-item {
-  box-sizing: border-box;
-  max-width: 100%; /* impede que ultrapasse a tela */
+  html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
 }

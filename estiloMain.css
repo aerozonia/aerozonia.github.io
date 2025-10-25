@@ -233,4 +233,17 @@ footer {
     font-size: 0.75rem;
     margin-top: 1rem;
   }
+
+  /* =========================
+     OCULTAR SCROLLBAR VERTICAL
+     ========================= */
+  body {
+    overflow-y: scroll; /* mantém a rolagem funcional */
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+  }
 }

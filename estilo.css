@@ -16,13 +16,13 @@ body {
     margin: 0 auto;
     max-width: 1350px;
     width: 100%;
-     cursor: url('./imagens/cursorpontinha.png'), auto;
+    cursor: url('./imagens/cursorpontinha.png'), auto;
 }
 
 a {
     text-decoration: none;
     color: white;
-     cursor: url('./imagens/cursormaozinha.png'), pointer;
+    cursor: url('./imagens/cursormaozinha.png'), pointer;
 }
 
 /* ===== GRID DESKTOP ===== */
@@ -124,6 +124,7 @@ main > a:hover {
 h1 {
     font-family: "UnifrakturCook", cursive;
 }
+
 /* ===== FOOTER ===== */
 footer {
     grid-column: 1 / 4;
@@ -193,6 +194,17 @@ footer {
     .esquerdo01, .direito02 {
         width: 180px;
     }
+
+    /* ===== OCULTAR BARRA DE ROLAGEM VERTICAL APENAS NO MOBILE ===== */
+    body {
+        overflow-y: scroll; /* mantém a rolagem */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE e Edge antigos */
+    }
+
+    body::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
 }
 
 /* ===== ANIMAÇÕES FLUTUANTES ===== */
@@ -202,8 +214,8 @@ footer {
     100% { transform: translateY(0); }
 }
 
-  @keyframes flutuar-down {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(10px); } /* menor amplitude só para mobile */
-        100% { transform: translateY(0); }
-    }
+@keyframes flutuar-down {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}

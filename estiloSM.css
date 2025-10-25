@@ -66,7 +66,7 @@ a {
     grid-column: 1 / -1;
     overflow: hidden;
     white-space: nowrap;
-    background: rgba(0, 38, 102, 0.35); /* fundo translúcido azul escuro */
+    background: rgba(0, 38, 102, 0.35);
     border-radius: 5px;
     height: 2.5rem;
     display: flex;
@@ -82,7 +82,7 @@ a {
     padding-left: 100%;
     animation: scroll-left 45s linear infinite;
     font-weight: bold;
-    color: #79F2F2; /* cor clara turquesa */
+    color: #79F2F2;
     font-family: "Michroma", sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
@@ -120,7 +120,7 @@ a {
 /* ===== MAIN ===== */
 main {
     grid-column: 2 / 3;
-    background: rgba(0, 38, 102, 0.2); /* fundo leve azul escuro */
+    background: rgba(0, 38, 102, 0.2);
     border-radius: 20px;
     line-height: 1.6;
     padding: 30px 40px;
@@ -213,19 +213,18 @@ footer {
 }
 
 @media (max-width: 600px) {
-    @media (max-width: 600px) {
     .header-container {
         width: 100%;
         max-width: 100%;
-        height: auto; /* permite ajustar a altura à imagem */
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0; /* remove padding que possa gerar overflow */
+        padding: 0;
     }
 
     .header-bg {
-        max-width: 90%; /* garante que a imagem nunca ultrapasse a tela */
+        max-width: 90%;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -238,4 +237,19 @@ footer {
 
     .marquee { font-size: 0.85rem; }
 }
+
+/* ===== OCULTAR BARRA DE ROLAGEM VERTICAL NO MOBILE (SEM PERDER ROLAGEM) ===== */
+@media (max-width: 900px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        scrollbar-width: none;
+    }
+
+    body {
+        -ms-overflow-style: none;
+        overflow-y: scroll;
+    }
 }
