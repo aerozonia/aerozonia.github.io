@@ -96,7 +96,7 @@ main p {
     color: #2EF297;
     text-align: justify;
     margin: 20px;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 1.5px;
 }
 
