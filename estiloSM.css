@@ -213,6 +213,29 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .header-container, .marquee-container { max-width: 100%; padding: 0 1rem; }
+    @media (max-width: 600px) {
+    .header-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* permite ajustar a altura à imagem */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* remove padding que possa gerar overflow */
+    }
+
+    .header-bg {
+        max-width: 90%; /* garante que a imagem nunca ultrapasse a tela */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .marquee-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
     .marquee { font-size: 0.85rem; }
+}
 }
