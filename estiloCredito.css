@@ -8,18 +8,14 @@
 
 body {
     background-color: #0D0D0D;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'kalam', cursive;
     cursor: url('./imagens/pontinhacredito.cur'), auto;
 }
 
-a {
-    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
-}
-
-/* Centraliza todo o conteúdo da página */
 .container {
-    width: 800px; /* ou qualquer valor consistente */
+    width: 800px;
     margin: 0 auto;
+    text-align: center; /* centraliza conteúdo inline, incluindo o botão */
 }
 
 /* HEADER */
@@ -35,38 +31,54 @@ header {
 }
 
 /* NAV */
- nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 30px;
-  margin-bottom: 60px;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
 nav ul li a {
-  color: #2EF297;
-  font-family: 'Michroma', sans-serif;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: all 0.4s ease;
-  position: relative;
+    font-family: 'Michroma', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    color: #2EF297;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
 }
 
-/* Efeito hover com gradiente e sombra suave */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #2EF297, aqua);
+    z-index: -1;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+}
+
 nav ul li a:hover {
-  background: linear-gradient(90deg, #2EF297, aqua);
-  color: #0D0D0D;
-  box-shadow: 0 0 10px #2EF29788;
-  transform: scale(1.05);
+    color: #0D0D0D;
 }
 
 /* MAIN */
 main {
     display: flex;
     justify-content: center;
-    border: 2px solid #2EF297;
     border-radius: 20px;
     width: 100%;
     padding: 5px;
@@ -74,6 +86,8 @@ main {
 
 main img {
     margin-left: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
 main p {
@@ -82,28 +96,28 @@ main p {
     margin: 20px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-   
 }
 
-
-
+/* BOTÃO VOLTAR - DESKTOP */
 #btn-voltar {
-    display: block;
-    margin: 30px auto; /* Centraliza com espaçamento */
-    padding: 10px 20px;
+    display: inline-block;      
+    margin: 30px auto;          
+    padding: 12px 20px;         
     background-color: #2EF297;
     color: #0D0D0D;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 50px;        
+    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
     box-shadow: 0 0 10px #2EF29755;
-    transition: background-color 0.3s, tranform 0.1s;
-
-    
+    transition: background-color 0.3s, transform 0.1s;
+    width: auto;                
+    font-size: 14px;
 }
 
 #btn-voltar:hover {
@@ -113,38 +127,29 @@ main p {
 #btn-voltar > a {
     text-decoration: none;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 #btn-voltar:active {
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
- 
-/* Scrollbar para navegadores WebKit (Chrome, Safari, Edge) */
+
+/* SCROLLBAR */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0D; /* fundo da trilha */
+  background: #0D0D0D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #2EF297, aqua); /* polegar com gradiente */
+  background: linear-gradient(to bottom, #2EF297, aqua);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, aqua, #2EF297); /* efeito no hover */
+  background: linear-gradient(to bottom, aqua, #2EF297);
 }
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-
-
 
 /* FOOTER */
 footer {
@@ -152,4 +157,63 @@ footer {
     text-align: center;
     margin-top: 100px;
     padding: 10px 0;
+}
+
+/* RESPONSIVIDADE PARA TELAS ATÉ 600px */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    header {
+        font-size: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    main img {
+        margin: 0 0 20px 0;
+        width: auto;
+        max-width: 150px;
+        height: auto;
+    }
+
+    main p {
+        margin: 0 0 20px 0;
+    }
+
+    /* BOTÃO VOLTAR - MOBILE */
+    #btn-voltar {
+        display: block;       /* ocupa mais largura */
+        width: 80%;           
+        padding: 12px 0;      
+        font-size: 12px;      
+        margin: 20px auto;
+    }
+
+    footer {
+        font-size: 14px;
+        margin-top: 50px;
+        text-align: center;
+    }
 }
