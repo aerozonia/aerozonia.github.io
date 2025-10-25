@@ -1,185 +1,207 @@
 @charset "UTF-8";
 
+/* ===== RESET ===== */
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== BODY ===== */
 body {
     background-color: black;
-    cursor: url('./imagens/cursorpontinha.png'), auto;
-    font-family: 'Courier New', Courier, monospace;line-height: 1.6;
+    font-family: "Kalam", cursive;
+    line-height: 1.6;
     padding: 2em;
-    margin: auto;
-    width: 1350px;
-   
+    margin: 0 auto;
+    max-width: 1350px;
+    width: 100%;
 }
 
 a {
-    cursor: url('./imagens/cursormaozinha.png'), pointer;
+    text-decoration: none;
+    color: white;
 }
 
-  .nowrap {
-      white-space: nowrap;
-      overflow-x: auto;
-    }
-
+/* ===== GRID DESKTOP ===== */
 .container {
     display: grid;
-    height: 100vh;
-    grid-column: 1fr 2fr 1fr;
-    grid-row: 1fr 2fr 1fr;
-    
+    grid-template-columns: 1fr 550px 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100vh;
 }
 
+/* ===== HEADER ===== */
 header {
-   
     grid-column: 1 / 4;
-    grid-row: 1 / 2;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
 }
 
 .cabecalho {
     width: 500px;
     height: 250px;
-    display: flex;
-    place-self: center;
-    margin-top: 15px;
+    object-fit: contain;
 }
 
-aside.esquerdo {
-  
+/* ===== ASIDES ===== */
+aside.esquerdo,
+aside.direito {
     display: flex;
-    place-self: center;
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Desktop */
+aside.desktop {
+    display: flex;
+}
+
+aside.mobile {
+    display: none;
 }
 
 .esquerdo01 {
-    width: 330px;
-    height: 430px;
-    margin-left: 18px;
-    width: 330px;
-    height: 430px;
-    margin-left: 18px;
-    animation: flutuar 3s ease-in-out infinite;
-    animation-delay: 1.5s;
-    
+    width: 250px;
+    height: auto;
+    animation: flutuar-up 3s ease-in-out infinite;
 }
 
 .direito02 {
-     width: 300px;
-    height: 430px;
-    margin-right: 18px;
-    width: 300px;
-  height: 430px;
-  margin-right: 18px;
-
-  /* ANIMAÇÃO AQUI */
-  animation: flutuar 3s ease-in-out infinite;
+    width: 230px;
+    height: auto;
+    animation: flutuar-down 3s ease-in-out infinite;
 }
 
-@keyframes flutuar {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px); /* sobe */
-  }
-  100% {
-    transform: translateY(0); /* volta */
-  }
-}
-
+/* ===== MAIN ===== */
 main {
-     
-    
-   width: 90%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 10px;
-
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
-main > img {
-      display: block;
-     margin: 0 auto 20px auto;
-    position: static;
-    margin-top: 0;
-    
-
-}
-main > a {
-    width: 100px;
-    height: 50px;
-    bottom:80%;
-    text-decoration: none;
+main h1 {
     color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
-main > a:hover {
-
-    color: aqua ;
-
-}
-
-main > p:first-of-type {
-    margin-top: 5px; /* bem pertinho da imagem topo */
-}
-
-
-main > p {
-   margin-bottom: 20px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+main p {
+    width: 100%;
     color: white;
-    font-family:'Courier New', Courier, monospace;
     font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
     word-spacing: 2px;
     text-align: justify;
-    
-    
+    margin-bottom: 20px;
 }
 
-.tab {
-    margin-top: 180px;
-}
-
-
-.topo {
-     width: 400px;
+main > a {
+    width: 100px;
     height: 50px;
-    display: block;
-    margin: 50px auto 15px auto;
-}
-
-aside.direito {
-   
     display: flex;
+    justify-content: center;
     align-items: center;
-    grid-column: 3/ 4;
-    grid-row: 2 / 4;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, color 0.3s;
 }
 
+main > a:hover {
+    color: aqua;
+}
+
+h1 {
+    font-family: "UnifrakturCook", cursive;
+}
+/* ===== FOOTER ===== */
 footer {
-    color: white;
     grid-column: 1 / 4;
-    grid-row: 4 / 5;
-    display: flex;
-    place-self: center;
-    font-family: 'Courier New', Courier, monospace;
-    
+    text-align: center;
+    color: white;
+    padding: 20px 0;
 }
 
+/* ===== RESPONSIVIDADE MOBILE ===== */
+@media (max-width: 600px) {
+
+    /* Container vira coluna */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        grid-column: 1 / -1;
+    }
+
+    .cabecalho {
+        width: 80%;
+        max-width: 250px;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    main {
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+    }
+
+    main h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    main p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    main > a {
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    /* Asides desktop escondidos */
+    aside.desktop {
+        display: none;
+    }
+
+    /* Asides mobile visíveis */
+    aside.mobile {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .esquerdo01, .direito02 {
+        width: 180px;
+    }
+}
+
+/* ===== ANIMAÇÕES FLUTUANTES ===== */
+@keyframes flutuar-up {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
+}
+
+  @keyframes flutuar-down {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(10px); } /* menor amplitude só para mobile */
+        100% { transform: translateY(0); }
+    }
