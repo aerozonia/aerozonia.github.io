@@ -27,8 +27,8 @@ header {
     margin-top: 30px;
     margin-bottom: 100px;
     text-align: center; 
-    font-family:"Michroma", sans-serif;
-    word-wrap: break-word; /* garante quebra de linha se precisar */
+    font-family: "Michroma", sans-serif;
+    word-wrap: break-word; /* evita overflow */
     overflow-wrap: break-word;
 }
 
@@ -135,7 +135,7 @@ main p {
     transform: translateY(2px);
 }
 
-/* SCROLLBAR */
+/* SCROLLBAR (DESKTOP) */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -169,8 +169,9 @@ footer {
         text-align: center;
     }
 
+    /* HEADER AJUSTADO PARA CELULAR */
     header {
-        font-size: 40px; /* reduz tamanho para mobile */
+        font-size: 40px; /* reduz o tamanho no mobile */
         margin-bottom: 50px;
         text-align: center;
         word-wrap: break-word;
@@ -219,5 +220,16 @@ footer {
         font-size: 14px;
         margin-top: 50px;
         text-align: center;
+    }
+
+    /* OCULTAR BARRA DE ROLAGEM VERTICAL NO MOBILE */
+    body {
+        scrollbar-width: none;       /* Firefox */
+        -ms-overflow-style: none;    /* IE e Edge antigo */
+        overflow-y: scroll;          /* mantém rolagem funcional */
+    }
+
+    body::-webkit-scrollbar {
+        display: none;               /* Chrome, Safari e Edge Chromium */
     }
 }
