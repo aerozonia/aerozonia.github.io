@@ -24,110 +24,118 @@
   </ul>
 </nav>
   
-   <div class="gallery">
+   <!-- GALERIA ÚNICA -->
+  <div class="gallery">
 
-<div class="gallery-item">
-  
-    <img src="./imagens/Winty armamenter 03.jpg" alt="Winter armamenter 01" width="600" height="400">
-  
-  <div class="desc">01</div>
-</div>
+    <!-- LINHA 1 -->
+    <div class="gallery-item">
+      <img src="./imagens/Winty armamenter 03.jpg" alt="Winter armamenter 01" width="600" height="400">
+      <div class="desc">01</div>
+    </div>
 
-<div class="gallery-item">
+    <div class="gallery-item">
+      <img src="./imagens/My annoying demon.jpg" alt="My annoying demon" width="600" height="400">
+      <div class="desc">00</div>
+    </div>
 
-    <img src="./imagens/My annoying demon.jpg" alt="My annoying demon" width="600" height="400">
-  
-  <div class="desc">00</div>
-</div>
+    <div class="gallery-item">
+      <img src="./imagens/masterchef.jpg" alt="Masterchef" width="600" height="400">
+      <div class="desc">001</div>
+    </div>
 
-<div class="gallery-item">
+    <div class="gallery-item">
+      <img src="./imagens/REVISTA ESBOÇO.jpg" alt="Revista" width="600" height="400">
+      <div class="desc">02</div>
+    </div>
 
-    <img src="./imagens/masterchef.jpg" alt="Masterchef" width="600" height="400">
-  
-  <div class="desc">001</div>
-</div>
+    <!-- LINHA 2 -->
+    <div class="gallery-item">
+      <img src="./imagens/FANART SAVAGE WINTER.jpg" alt="Winter savage era" width="600" height="400">
+      <div class="desc">03</div>
+    </div>
 
-<div class="gallery-item">
+    <div class="gallery-item">
+      <img src="./imagens/07.png" alt="PROJETO 01 - H&M" width="600" height="400">
+      <div class="desc">04</div>
+    </div>
 
-    <img src="./imagens/REVISTA ESBOÇO.jpg" alt="Revista" width="600" height="400">
-  
-  <div class="desc">02</div>
-</div>
+    <div class="gallery-item">
+      <img src="./imagens/cover 01.02.png" alt="GOTTA BE YOU COVER FANFIC WINRINA" width="600" height="400">
+      <div class="desc">003</div>
+    </div>
 
-</div>
+    <div class="gallery-item">
+      <img src="./imagens/NewCanvas13.jpg" alt="Capa descartada (ou não) da história MINHA DOCE CRIATURA" width="600" height="400">
+      <div class="desc">004</div>
+    </div>
 
-<!-- COLUNA 2 -->
+    <!-- LINHA 3 -->
+    <div class="gallery-item">
+      <img src="./imagens/CCUPFS.jpg" alt="Capa Compro Calcinhas Usadas para Fins Sentimentais" width="600" height="400">
+      <div class="desc">03</div>
+    </div>
 
-<div class="gallery">
+    <div class="gallery-item">
+      <img src="./imagens/UDCH.jpg" alt="Capa Um Demônio Chamado Houna" width="600" height="400">
+      <div class="desc">04</div>
+    </div>
 
-<div class="gallery-item">
-  
-    <img src="./imagens/FANART SAVAGE WINTER.jpg" alt="Winter savage era" width="600" height="400">
-  
-  <div class="desc">03</div>
-</div>
+    <div class="gallery-item">
+      <img src="./imagens/Entre crises e cancoes.jpg" alt="Capa Entre Crises e Canções" width="600" height="400">
+      <div class="desc">003</div>
+    </div>
 
-<div class="gallery-item">
-  
-    <img src="./imagens/07.png" alt="PROJETO 01 - H&M" width="600" height="400">
+    <div class="gallery-item">
+      <img src="./imagens/H&M01.jpg" alt="Houna & Mia" width="600" height="400">
+      <div class="desc">004</div>
+    </div>
 
-  <div class="desc">04</div>
-</div>
+    <div class="gallery-item">
+      <img src="./imagens/N&O.jpg" alt="Nide & Olivia" width="600" height="400">
+      <div class="desc">004</div>
+    </div>
 
-<div class="gallery-item">
-  
-    <img src="./imagens/cover 01.02.png" alt="GOTTA BE YOU COVER FANFIC WINRINA" width="600" height="400">
 
-  <div class="desc">003</div>
-</div>
+  </div> <!-- FIM GALERIA -->
 
-<div class="gallery-item">
-  
-    <img src="./imagens/NewCanvas13.jpg" alt="Capa descartada (ou não) da história MINHA DOCE CRIATURA" width="600" height="400">
-  
-  <div class="desc">004</div>
-</div>
-
-</div>
-
-    </nav>
-    <div class="voltar-inicio">
-  <a href="index.html">VOLTAR </a>
-</div>
-    <footer>
-      <p>aerozonia 00:00 - Todos os direitos reservados</p>
-    </footer>
-
-    <!-- MODAL -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content-wrapper">
-    <img class="modal-content" id="imgModal">
-    <div id="caption"></div>
+  <div class="voltar-inicio">
+    <a href="index.html">VOLTAR</a>
   </div>
-</div>
 
-    <script>
-   // Seleciona elementos
-const modal = document.getElementById("myModal");
-const modalImg = document.getElementById("imgModal");
-const captionText = document.getElementById("caption");
-const imgs = document.querySelectorAll(".gallery-item img");
-const closeBtn = document.querySelector(".close");
+  <footer>
+    <p>aerozonia 00:00 - Todos os direitos reservados</p>
+  </footer>
 
-// Abre modal ao clicar em qualquer imagem
-imgs.forEach(img => {
-  img.addEventListener("click", function() {
-    modal.style.display = "flex"; // abre modal
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  });
-});
+  <!-- MODAL -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content-wrapper">
+      <img class="modal-content" id="imgModal">
+      <div id="caption"></div>
+    </div>
+  </div>
 
-// Fecha modal ao clicar no X
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
+  <script>
+    // Seleciona elementos
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("imgModal");
+    const captionText = document.getElementById("caption");
+    const imgs = document.querySelectorAll(".gallery-item img");
+    const closeBtn = document.querySelector(".close");
+
+    // Abre modal ao clicar em qualquer imagem
+    imgs.forEach(img => {
+      img.addEventListener("click", function() {
+        modal.style.display = "flex"; // abre modal
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      });
+    });
+
+    // Fecha modal ao clicar no X
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
 </script>
 </body>
 </html>
