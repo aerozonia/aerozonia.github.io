@@ -9,11 +9,11 @@ body {
   color: #000000;
   margin: 0 auto;
   line-height: 1.6;
-  cursor: url('./imagens/pontinhamain.cur'), auto;
+  cursor: url('./imagens/goxygenn.cur'), auto;
 }
 
 a {
-  cursor: url('./imagens/Officialcursor02.png'), pointer;
+  cursor: url('./imagens/goxygenn_link.cur'), pointer;
 }
 
 nav {
