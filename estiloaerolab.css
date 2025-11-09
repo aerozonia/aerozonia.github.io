@@ -2,12 +2,12 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background-color: #0B0B1A;
- /* 
+  background-color: #000012;
+ /*
   background-image: url('./imagens/ChatGPT\ Image\ 9\ de\ nov.\ de\ 2025\,\ 10_28_05.png');
   background-repeat: repeat;
-  background-size: 5%;
-  */
+  background-size: 5%; */
+  
   color: #BFF207; /* cor igual à do post fixo */
   margin: 0 auto;
   line-height: 1.6;
