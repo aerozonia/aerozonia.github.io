@@ -2,11 +2,11 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background-color: #0B1726;
+  background-color: rgba(10, 10, 10, 0.932);
  
-  background-image: url('./imagens/ditherdoubley2.png');
+  background-image: url('./imagens/bg.png');
   background-repeat: cover;
- 
+  /*background-size: 10%;*/
 
   
   
