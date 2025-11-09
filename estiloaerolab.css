@@ -84,7 +84,7 @@ nav a:hover {
   animation: swing 2.5s ease-in-out infinite;
   pointer-events: auto;
 
-  width: clamp(250px, 60%, 420px); /* Responsivo, cresce sem quebrar */
+  width: clamp(350px, 80%, 600px); /* bem maior e ainda responsivo */
   height: auto;
 }
 
@@ -257,7 +257,7 @@ footer {
   }
 
  .header-overlay {
-  width: clamp(180px, 55%, 260px);
+  width: clamp(220px, 75%, 320px);
 }
 
   /* POSTS COM IMAGEM */
