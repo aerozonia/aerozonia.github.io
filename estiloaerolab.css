@@ -5,7 +5,7 @@ body {
   background-color: #0D1A2D;
   background-image: url('./imagens/ChatGPT\ Image\ 9\ de\ nov.\ de\ 2025\,\ 10_28_05.png');
   background-repeat: repeat;
-  background-size: 5%; 
+  background-size: 5%;
   color: #000000;
   margin: 0 auto;
   line-height: 1.6;
@@ -16,6 +16,7 @@ a {
   cursor: url('./imagens/outro.cur'), pointer;
 }
 
+/* NAV */
 nav {
   margin: 0 0 1.5rem 0;
   padding: 0 2rem;
@@ -39,27 +40,77 @@ nav a:hover {
   transform: scale(1.1);
 }
 
+/* ===== POSTS: aplicar visual do post fixo a todos os posts ===== */
 .post {
-  background-color: #A772F2;
+  /* visual inspirado na nota fixa: suave, levemente fosco e integrado ao fundo */
+  background-color: rgba(255, 255, 255, 0.04); /* leve translucidez */
+  backdrop-filter: blur(4px); /* desfoque leve do fundo atrás do post */
+  -webkit-backdrop-filter: blur(4px); /* suporte Safari */
+  color: #BFF207; /* texto principal em tom suave de verde */
+  border: 1px solid rgba(191, 242, 7, 0.18);
+  border-radius: 8px;
   padding: 1.5rem;
-  border-radius: 5px;
-  border: 2px solid #6805F2;
   margin-bottom: 1.5rem;
   font-family: "Kalam", cursive;
   width: 100%;
   box-sizing: border-box;
   display: block;
+  line-height: 1.6;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
 }
 
+/* efeito sutil ao passar o mouse (desktop) */
+.post:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 18px rgba(13, 26, 45, 0.25);
+}
+
+/* meta / data do post */
 .post time {
   display: block;
   font-size: 0.85rem;
-  color: #1D1340;
+  color: #A7F205;
   margin-bottom: 0.5rem;
   font-weight: bold;
   white-space: nowrap;
+  opacity: 0.9;
+  text-transform: lowercase;
 }
 
+/* títulos ou destaques internos (opcional) */
+.post strong {
+  display: block;
+  font-style: normal;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: #A7F205;
+}
+
+/* imagens dentro do post — mantém miniatura ao lado no desktop */
+.post-img {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #6805F2;
+  margin: 0;
+}
+
+/* bloco de texto ao lado da imagem (quando houver) */
+.post-text {
+  flex: 1 1 auto;
+}
+
+/* layout de posts com imagem: thumbnail à esquerda (desktop) */
+.post:has(.post-img) {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ===== HEADER e SOBREPOSIÇÃO ===== */
 .header-container {
   position: relative;
   width: 100%;
@@ -83,8 +134,7 @@ nav a:hover {
   transform: translate(-50%, -50%);
   animation: swing 2.5s ease-in-out infinite;
   pointer-events: auto;
-
-  width: clamp(350px, 80%, 600px); /* bem maior e ainda responsivo */
+  width: clamp(350px, 80%, 600px);
   height: auto;
 }
 
@@ -100,6 +150,7 @@ nav a:hover {
   100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
 
+/* ===== FOOTER E BOTÃO VOLTAR ===== */
 footer {
   text-align: center;
   font-size: 0.85rem;
@@ -128,6 +179,7 @@ footer {
   color: black;
 }
 
+/* ===== CONTAINER ===== */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -140,6 +192,7 @@ footer {
   }
 }
 
+/* ===== MARQUEE ===== */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -168,7 +221,7 @@ footer {
   }
 }
 
-/* Scrollbar padrão */
+/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -192,26 +245,7 @@ footer {
   scrollbar-color: #A7F205 #1D1340;
 }
 
-.post-img {
-  flex-shrink: 0;
-  width: 120px;
-  height: auto;
-  border-radius: 5px;
-  object-fit: cover;
-  border: 2px solid #6805F2;
-}
-
-.post-text {
-  flex: 1;
-}
-
-.post:has(.post-img) {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-/* Modal */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
@@ -246,9 +280,8 @@ footer {
 @media (max-width: 600px) {
   body {
     padding: 0;
-
     /* Ocultar scrollbar em mobile */
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
 
   /* WebKit (Chrome, Safari, Edge) */
@@ -256,11 +289,12 @@ footer {
     display: none;
   }
 
- .header-overlay {
-  width: clamp(220px, 75%, 320px);
-}
+  /* header overlay menor no mobile */
+  .header-overlay {
+    width: clamp(220px, 75%, 320px);
+  }
 
-  /* POSTS COM IMAGEM */
+  /* posts com imagem -> empilhar no mobile */
   .post:has(.post-img) {
     flex-direction: column;
     align-items: center;
@@ -271,7 +305,9 @@ footer {
     display: block;
     width: 100%;
     max-width: 300px;
+    height: auto;
     margin: 0 auto 1rem auto;
+    border-radius: 8px;
   }
 
   .post-text {
@@ -284,25 +320,25 @@ footer {
     text-align: center;
   }
 
-   .post p,
+  /* justificado apenas no mobile (conforme pedido anterior) */
+  .post p,
   .post.destaque p {
     text-align: justify;
   }
 }
 
-
-
-
-
+/* ===== POST FIXO / DESTAQUE (mantido caso queira tweak individual) ===== */
 .post.destaque {
-  background-color: rgba(255, 255, 255, 0.05); /* leve transparência */
-  color: #BFF207; /* verde suave da sua paleta */
-  border: 1px solid rgba(191, 242, 7, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #BFF207;
+  border: 1px solid rgba(191, 242, 7, 0.25);
   text-align: center;
   font-style: italic;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .post.destaque strong {
