@@ -283,4 +283,39 @@ footer {
     margin-bottom: 0.5rem;
     text-align: center;
   }
+
+   .post p,
+  .post.destaque p {
+    text-align: justify;
+  }
+}
+
+
+
+
+
+.post.destaque {
+  background-color: rgba(255, 255, 255, 0.05); /* leve transparência */
+  color: #BFF207; /* verde suave da sua paleta */
+  border: 1px solid rgba(191, 242, 7, 0.3);
+  text-align: center;
+  font-style: italic;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.post.destaque strong {
+  display: block;
+  font-style: normal;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #A7F205;
+}
+
+.post.destaque time {
+  color: #A7F205;
+  font-weight: bold;
+  text-transform: lowercase;
+  opacity: 0.6;
 }
