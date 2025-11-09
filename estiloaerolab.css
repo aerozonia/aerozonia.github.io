@@ -9,11 +9,11 @@ body {
   color: #000000;
   margin: 0 auto;
   line-height: 1.6;
-  cursor: url('./imagens/cursoraerolab.gif'), auto;
+  cursor: url('./imagens/pontinhamain.cur'), auto;
 }
 
 a {
-  cursor: url('./imagens/download.ico'), pointer;
+  cursor: url('./imagens/Officialcursor02.png'), pointer;
 }
 
 nav {
