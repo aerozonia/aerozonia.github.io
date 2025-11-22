@@ -1,235 +1,277 @@
 @charset "UTF-8";
 
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== lixostilo18.css — versão adaptada às cores do pôster enviado ===== */
+
+/* Paleta do pôster:
+   - preto profundo: #050505
+   - azul petróleo escuro: #003b46
+   - azul petróleo claro: #055f6a
+   - ciano vibrante: #37d5d3
+   - amarelo destaque: #f7d038
+   - azul-claro da pele: #8ddbe0
+   - branco / texto frio: #e7f9fb
+*/
+
+:root{
+
+  /* Fundo inspirado no pôster:
+     Preto profundo → azul petróleo escuro */
+  --bg: linear-gradient(180deg, #050505 0%, #003b46 100%);
+
+  /* Textos */
+  --accent: #e7f9fb; 
+  --muted: rgba(231,249,251,0.7);
+  --max-w: 1100px;
+
+  /* Pills */
+  --pill-bg: #055f6a;
+  --pill-border: rgba(247,208,56,0.25);
+  --pill-hover: #03707c;
+  --pill-active: #02444d;
+
+  /* Links */
+  --link: #f7d038;
+  --link-hover: #ffec7a;
+  --link-active: #d8b728;
+
+  /* TEXT AREA (fundo azul petróleo claro translúcido) */
+  --text-area-bg: rgba(5,95,106,0.25);
+  --text-area-border: rgba(255,255,255,0.08);
+
+  /* IMG BOX – inspirado no tom ciano/azul da arte */
+  --imgbox-bg: linear-gradient(180deg, #37d5d3 0%, #055f6a 100%);
+  --imgbox-overlay: rgba(0,0,0,0.08);
+
+  --card-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+  --gap-desktop: 40px;
+  --gap-tablet: 28px;
+  --gap-mobile: 14px;
+
+  --pill-min-height: 44px;
+  --font-base: 16px;
+
+  --fast: .12s;
+  --mid: .18s;
 }
 
-body {
-    background-color: #0D0D0D;
-    font-family: 'kalam', cursive;
-    cursor: url('./imagens/pontinhacredito.cur'), auto;
+/* Reset / base */
+*{ box-sizing: border-box; }
+html, body{
+  height:100%;
+  overflow-x:hidden;
+}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--accent);
+  line-height:1.35;
+  font-size:var(--font-base);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  -webkit-tap-highlight-color: transparent;
+  cursor: url("./imagens/pontinhacredito.cur"), auto;
 }
 
-.container {
-    width: 800px;
-    margin: 0 auto;
-    text-align: center; /* centraliza conteúdo inline, incluindo o botão */
+/* Main wrapper */
+.wrap{
+  width:100%;
+  max-width:var(--max-w);
+  padding:30px 16px;
+  display:flex;
+  gap:var(--gap-desktop);
+  align-items:center;
+  justify-content:center;
+  flex:1;
+  margin:0 auto;
+}
+.wrap > *{ min-width:0; }
+
+/* Left Image */
+.portrait{
+  flex:0 0 360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* HEADER */
-header {
-    background-image: linear-gradient(#2EF297, aqua);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 80px;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    text-align: center; 
-    font-family: "Michroma", sans-serif;
-    word-wrap: break-word; /* evita overflow */
-    overflow-wrap: break-word;
+.imgbox{
+  width:320px;
+  height:320px;
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:var(--card-shadow);
+  background:var(--imgbox-bg);
+  position:relative;
+  transition: transform var(--mid), box-shadow var(--mid);
+  border:2px solid rgba(255,255,255,0.05);
 }
 
-/* NAV */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
+.imgbox::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:var(--imgbox-overlay);
 }
 
-nav ul li a {
-    font-family: 'Michroma', sans-serif;
-    font-size: 24px;
-    text-decoration: none;
-    color: #2EF297;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    position: relative;
-    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
+.img-desktop{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #2EF297, aqua);
-    z-index: -1;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+.img-mobile{
+  display:none;
 }
 
-nav ul li a:hover::before {
-    transform: scaleX(1);
+/* Hover */
+.imgbox:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+.imgbox:active{
+  transform: translateY(-2px) scale(.995);
 }
 
-nav ul li a:hover {
-    color: #0D0D0D;
+/* Right content */
+.content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  justify-content:center;
 }
 
-/* MAIN */
-main {
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    width: 100%;
-    padding: 5px;
+.title{ display:flex; flex-direction:column; gap:6px; }
+
+.name{
+  font-size:34px;
+  font-weight:700;
+  color:var(--accent);
 }
 
-main img {
-    margin-left: 5px;
-    max-width: 100%;
-    height: auto;
+.meta{
+  color:var(--muted);
+  font-size:13px;
 }
 
-main p {
-    color: #2EF297;
-    text-align: justify;
-    margin: 20px;
-    text-transform: none;
-    letter-spacing: 1.5px;
+/* Buttons (pills) */
+.pills{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px 18px;
+  width:100%;
 }
 
-/* BOTÃO VOLTAR - DESKTOP */
-#btn-voltar {
-    display: inline-block;      
-    margin: 30px auto;          
-    padding: 12px 20px;         
-    background-color: #2EF297;
-    color: #0D0D0D;
-    border: none;
-    border-radius: 50px;        
-    cursor: url('./imagens/cursorCREDITO02.png'), pointer;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 0 10px #2EF29755;
-    transition: background-color 0.3s, transform 0.1s;
-    width: auto;                
-    font-size: 14px;
+.pill{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  min-height:var(--pill-min-height);
+  border-radius:999px;
+  text-decoration:none;
+  background:var(--pill-bg);
+  border:2px solid var(--pill-border);
+  font-weight:600;
+  color:var(--accent);
+  box-shadow:var(--card-shadow);
+  transition: var(--fast);
+  cursor:pointer;
 }
 
-#btn-voltar:hover {
-    background-color: aqua;
+.pill:hover{
+  transform:translateY(-4px);
+  background:var(--pill-hover);
+}
+.pill:active{
+  transform:translateY(-1px) scale(.995);
+  background:var(--pill-active);
 }
 
-#btn-voltar > a {
-    text-decoration: none;
-    color: black;
+/* TEXT AREA */
+.text-area{
+  border:2px solid var(--text-area-border);
+  font-family: "Kalam", cursive;
+  text-align: justify;
+  background:var(--text-area-bg);
+  padding:18px;
+  border-radius:10px;
+  font-size:15px;
+  line-height:1.45;
+  color:var(--accent);
 }
 
-#btn-voltar:active {
-    transform: translateY(2px);
+.text-area:focus-within{
+  transform: translateY(-4px);
 }
 
-/* SCROLLBAR (DESKTOP) */
-::-webkit-scrollbar {
-  width: 12px;
+/* Footer */
+.footer{
+  width:100%;
+  text-align:center;
+  padding:16px 0;
+  font-size:14px;
+  color:var(--muted);
 }
 
-::-webkit-scrollbar-track {
-  background: #0D0D0D;
+/* LINKS */
+a{
+  color:var(--link);
+  text-decoration:none;
+  transition: color var(--fast) ease, transform var(--fast) ease;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #2EF297, aqua);
-  border-radius: 10px;
+a:hover,
+a:focus{
+  color:var(--link-hover);
+  transform: translateY(-2px);
+  cursor: url("./imagens/cursorCREDITO02.png"), auto;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, aqua, #2EF297);
+a:active{
+  color:var(--link-active);
+  transform: scale(.97);
+  opacity:.9;
 }
 
-/* FOOTER */
-footer {
-    color: #2EF297;
-    text-align: center;
-    margin-top: 100px;
-    padding: 10px 0;
+/* ================= Responsividade ================= */
+
+@media (max-width: 620px){
+
+  .wrap{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .portrait{ order:-1; }
+
+  .img-desktop{ display:none; }
+  .img-mobile{
+    display:block;
+    width:100%;
+    max-width:420px;
+  }
+
+  .content{
+    align-items:center;
+    text-align:center;
+  }
+
+  .pills{
+    grid-template-columns:repeat(2, 1fr);
+  }
 }
 
-/* RESPONSIVIDADE PARA TELAS ATÉ 600px */
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    /* HEADER AJUSTADO PARA CELULAR */
-    header {
-        font-size: 40px; /* reduz o tamanho no mobile */
-        margin-bottom: 50px;
-        text-align: center;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    nav ul li a {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-    }
-
-    main img {
-        margin: 0 0 20px 0;
-        width: auto;
-        max-width: 150px;
-        height: auto;
-    }
-
-    main p {
-        margin: 0 0 20px 0;
-    }
-
-    /* BOTÃO VOLTAR - MOBILE */
-    #btn-voltar {
-        display: block;       
-        width: 80%;           
-        padding: 12px 0;      
-        font-size: 12px;      
-        margin: 20px auto;
-    }
-
-    footer {
-        font-size: 14px;
-        margin-top: 50px;
-        text-align: center;
-    }
-
-    /* OCULTAR BARRA DE ROLAGEM VERTICAL NO MOBILE */
-    body {
-        scrollbar-width: none;       /* Firefox */
-        -ms-overflow-style: none;    /* IE e Edge antigo */
-        overflow-y: scroll;          /* mantém rolagem funcional */
-    }
-
-    body::-webkit-scrollbar {
-        display: none;               /* Chrome, Safari e Edge Chromium */
-    }
+@media (max-width: 360px){
+  .pill{
+    padding:10px 8px;
+    font-size:12px;
+  }
 }
+
