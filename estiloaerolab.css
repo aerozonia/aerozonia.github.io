@@ -28,6 +28,7 @@ html,body{
   background:var(--bg-deep);color:var(--soft-white);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  cursor: url('./imagens/pontinhagaleria.cur'), auto;
 }
 body{padding:0;}
 
@@ -94,6 +95,10 @@ nav{
   background: linear-gradient(90deg, rgba(194,117,255,0.12), rgba(138,240,255,0.06));
   border:1px solid rgba(255,255,255,0.03);
 }
+ a {
+  cursor: url('./imagens/cursorCREDITO02.png'), auto;
+ }
+
 nav a{
   color:var(--pure-white); margin:0 .9rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.8px;
