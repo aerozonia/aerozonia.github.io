@@ -142,8 +142,9 @@ nav a:hover{
   color:var(--soft-white);
   padding:1.4rem; border-radius:10px;
   border:1px solid rgba(159,120,255,0.06);
-  margin-bottom:1.6rem; font-family: "Kalam", cursive;
+  margin-bottom:1.8rem; font-family: "Kalam", cursive;
   text-align: justify;
+  
   width:100%; display:block;
   backdrop-filter: blur(6px) saturate(120%);
   transition: transform .28s cubic-bezier(.2,.9,.2,1),
