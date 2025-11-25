@@ -117,6 +117,59 @@
     }
   });
 </script>
+ <script>
+// Seleciona todos os posts normais (exceto destaque)
+document.querySelectorAll(".post:not(.destaque)").forEach(post => {
+  
+  // pega todos os parágrafos
+  const paragrafos = post.querySelectorAll("p");
+
+  // junta em um bloco único
+  let conteudo = "";
+  paragrafos.forEach(p => conteudo += `<p>${p.innerHTML}</p>`);
+
+  // se for curto, não faz nada
+  if (conteudo.length < 380) return;
+
+  // cria container reduzido
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("texto-reduzido");
+  wrapper.innerHTML = conteudo;
+
+  // limpa HTML original
+  paragrafos.forEach(p => p.remove());
+
+  // adiciona o novo bloco
+  post.appendChild(wrapper);
+
+  // botão leia mais
+  const btn = document.createElement("span");
+  btn.classList.add("leia-mais-btn");
+  btn.innerText = "Leia mais";
+  post.appendChild(btn);
+
+  // evento do botão
+  btn.addEventListener("click", () => {
+    wrapper.classList.toggle("texto-expandido");
+
+    if (wrapper.classList.contains("texto-expandido")) {
+      btn.innerText = "Mostrar menos";
+      wrapper.style.maxHeight = "2000px";
+      wrapper.style.overflow = "visible";
+      wrapper.style.paddingBottom = "10px";
+      wrapper.style.transition = "max-height .4s ease";
+      wrapper.style.setProperty("--fade", "none");
+      wrapper.classList.remove("texto-reduzido");
+    } else {
+      btn.innerText = "Leia mais";
+      wrapper.style.maxHeight = "120px";
+      wrapper.style.overflow = "hidden";
+      wrapper.classList.add("texto-reduzido");
+    }
+  });
+
+});
+</script>
 
 
 </body>
