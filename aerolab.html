@@ -285,7 +285,8 @@ document.querySelectorAll(".post:not(.destaque)").forEach(post => {
 
     if (wrapper.classList.contains("texto-expandido")) {
       btn.innerText = "Mostrar menos";
-      wrapper.style.maxHeight = "2000px";
+    wrapper.style.maxHeight = "none";
+
       wrapper.style.overflow = "visible";
       wrapper.style.paddingBottom = "10px";
       wrapper.style.transition = "max-height .4s ease";

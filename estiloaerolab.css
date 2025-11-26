@@ -169,7 +169,7 @@ nav a:hover{
 .post-com-imagem .post-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: center; /* centraliza verticalmente */
+  align-items: center;
   gap: 15px;
 }
 .post-com-imagem .post-img-container {
@@ -186,10 +186,10 @@ nav a:hover{
   transition: transform .28s ease, filter .28s ease;
 }
 .post-com-imagem .post-text {
-  flex: 1; /* ocupa espaço restante */
+  flex: 1;
 }
 
-/* ==== LEIA MAIS ==== */
+/* ==== LEIA MAIS (CORRIGIDO) ==== */
 .post .texto-reduzido {
   max-height: 120px;
   overflow: hidden;
@@ -203,10 +203,15 @@ nav a:hover{
   left: 0;
   width: 100%;
   height: 40px;
+  pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--bg-deep));
 }
 .post .texto-expandido {
-  max-height: 2000px !important;
+  max-height: none !important;      /* CORREÇÃO */
+  overflow: visible !important;     /* CORREÇÃO */
+}
+.post .texto-expandido::after {
+  display: none !important;         /* CORREÇÃO */
 }
 .leia-mais-btn {
   display: inline-block;
@@ -304,12 +309,6 @@ footer{
   .marquee{ animation-duration:22s; font-size:12px; }
 }
 
-
-
-
-
-
-
 /* =========================
    POSTS COM IMAGEM — CSS CORRIGIDO
    ========================= */
@@ -317,7 +316,7 @@ footer{
 .post-com-imagem .post-wrapper {
   display: flex;
   gap: 20px;
-  align-items: center; /* centraliza verticalmente a imagem */
+  align-items: center;
 }
 
 .post-com-imagem .post-img-container {
@@ -348,7 +347,6 @@ footer{
   text-align: justify;
 }
 
-/* tempo/data do post */
 .post-com-imagem time {
   display: block;
   font-size: .9rem;
@@ -358,15 +356,13 @@ footer{
   letter-spacing: .6px;
 }
 
-/* título */
 .post-com-imagem h4 {
   margin-top: 0;
   margin-bottom: 0.6rem;
 }
 
-/* botão leia mais */
 .post-com-imagem .leia-mais-btn {
-  align-self: flex-start; /* fica no final do conteúdo */
+  align-self: flex-start;
   margin-top: 10px;
   color: var(--lilac);
   font-weight: 700;
@@ -379,7 +375,6 @@ footer{
   color: var(--neon-cyan);
 }
 
-/* responsivo */
 @media (max-width: 720px) {
   .post-com-imagem .post-wrapper {
     flex-direction: column;
