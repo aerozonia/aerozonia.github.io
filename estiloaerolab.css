@@ -396,3 +396,31 @@ footer{
     align-self: center;
   }
 }
+
+
+/* Samsung Galaxy S10e — 360px */
+@media screen and (max-width: 380px) {
+
+  .post .texto-reduzido {
+    max-height: 100px !important; /* reduz mais forte para caber */
+  }
+
+  .post .texto-expandido {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .post .texto-reduzido::after {
+    height: 50px !important; /* fade maior para compensar corte */
+  }
+
+  /* Impede sobreposições no layout geral */
+  .conteudo-post {
+    overflow: hidden !important;
+  }
+
+  /* Em alguns casos, a caixa do post precisa respirar mais */
+  .post {
+    padding-bottom: 20px !important;
+  }
+}
