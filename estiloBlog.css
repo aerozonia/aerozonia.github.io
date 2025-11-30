@@ -396,3 +396,46 @@ footer{
 .leia-mais-btn:hover {
   cursor: url('./imagens/cursormaozinha.png'), pointer;
 }
+
+
+/* --- Estilo básico do modal de imagem --- */
+.modal{
+  display: none;               /* escondido por padrão */
+  position: fixed;
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.75);
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal.show{
+  display: flex;               /* mostra como flex quando tem .show */
+}
+
+.modal-content{
+  max-width: 96%;
+  max-height: 92%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border-radius: 6px;
+  object-fit: contain;
+  display: block;
+}
+
+.modal-close{
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 28px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2100;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+/* pequeno ajuste para toque */
+.modal-close:focus{ outline: 3px solid rgba(255,255,255,0.15); border-radius: 4px; }
