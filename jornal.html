@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornal</title>
+    <link rel="stylesheet" href="estilojornal.css">
+     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+     <link rel="shortcut icon" href="./imagens/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Alternar tema" title="Alternar tema" class="theme-toggle">
+  <span class="icon">🌙</span><span class="label">escuro</span>
+</button>
+
+ <a href="main.html" class="back-link" aria-label="Voltar">
+  <span class="back-arrow" aria-hidden="true">←</span>
+  <span class="back-text">voltar</span>
+</a>
+
+ 
+<article class="newspaper-wrap">
+
+<header class="masthead">
+  <div class="small">edição permanente</div>
+  <h1>Vistas & Vozes</h1>
+  <div class="tag">observações, reflexões e registros atemporais</div>
+</header>
+
+<h2 class="headline">UM JORNAL SOBRE MINHA ANSIEDADE</h2>
+
+<div class="meta">
+  <span>arquivo contínuo</span>
+  <div class="dot"></div>
+  <span>sem data</span>
+  <div class="dot"></div>
+  <span>sem urgência</span>
+</div>
+
+<div class="content">
+
+<section class="col-main">
+
+<p><span class="dropcap">E</span>ste, provavelmente, vai ser um relato confessional sobre a minha atual maior ansiedade: redes sociais. Eu criei coragem para desabafar sobre isso depois de ler o site “Mortaki”, cujo autor se autodenomina “Bard” (Bardo, em português, eu acho), especialmente o texto sobre a teoria da internet viva e o renascimento da web.</p>
+
+<p>O que mais me aflige e tem me deixado extremamente nervosa por estar online — principalmente ativa no Twitter — é perceber como parece difícil lembrar que as outras pessoas na internet são, em teoria, humanas. Muitas vezes, nem parecem ser. Isso faz com que a teoria da internet morta faça cada vez mais sentido para mim.</p>
+
+<p>Eu não sei, não sei nem se este texto pode fazer sentido para alguém que, porventura, venha ler isso enquanto fuça aqui no meu cantinho, mas eu preciso tirar esse fardo que tem me estressado bastante e sugado boa parte da minha energia. Eu realmente não consigo mais “entrar” no Twitter — e me recuso a chamar de “X”, que rebranding péssimo, hein, Elon Musk — sem esperar ver coisas ruins e palavras cruéis sobre o meu hiperfoco isolado (aespa), sem nenhum motivo aparente, apenas pela vontade alheia de serem odiosas e de mendigar curtidas.</p>
+
+<p>Eu sinto vontade de tacar meu celular na parede. Imediatamente, tenho uma crise de ansiedade.</p>
+
+<p>A pior parte é que não tenho como abandonar aquele inferno na terra completamente, pois é a única forma de acompanhar minhas faves em “tempo real”. Além disso, eu interajo e acompanho outras pessoas que compartilham os mesmos gostos e estresses diários que eu.</p>
+
+<p>Se eu pudesse, destruiria todas essas pragas que acordam já com o objetivo de arruinar o humor de todo mundo. Eu poderia derrubar contas e expor o quão patéticos são em suas vidinhas medíocres fora da internet. Sim, eu poderia. Mas ainda não cheguei ao ponto de cometer crimes e descer ao nível dessa gente.</p>
+
+<p>De toda forma, espero um dia conseguir me anestesiar o suficiente para ignorar essas merdas.</p>
+
+
+</section>
+
+<aside class="col-side">
+
+<img
+  src="./imagens/elemento.png"
+  alt="Ilustração — espaços que respiram"
+  class="feature-img" />
+
+
+<div class="caption">arquivo visual — espaços que respiram</div>
+
+<div class="time-boxes">
+  <div class="time-box">SILÊNCIO<span class="small">como método</span></div>
+  <div class="time-box">TEMPO<span class="small">como matéria</span></div>
+  <div class="time-box">OLHAR<span class="small">como prática</span></div>
+</div>
+
+<div class="mini">
+  <div class="item"><strong>Registro:</strong> o simples também merece arquivo.</div>
+  <div class="item"><strong>Olhar:</strong> ver é um gesto ativo.</div>
+  <div class="item"><strong>Permanência:</strong> nem tudo precisa mudar.</div>
+</div>
+
+</aside>
+</div>
+
+<footer class="paper-footer">
+  <div>Vistas e Vozes</div>
+  <div>edição permanente — arquivo sensível</div>
+</footer>
+
+</article>
+<script>
+(function(){
+  const root = document.documentElement; // <html>
+  const toggle = document.getElementById('theme-toggle');
+  const ICONS = { dark: '🌙', light: '☀️' };
+
+  // pega preferência salva
+  const saved = localStorage.getItem('vistas-theme'); // 'dark' | 'light' | null
+
+  // função para aplicar tema
+  function applyTheme(theme){
+    if(theme === 'dark'){
+      root.setAttribute('data-theme','dark');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+
+    // atualiza botão
+    if(toggle){
+      toggle.querySelector('.icon').textContent = theme === 'dark' ? ICONS.light : ICONS.dark;
+      toggle.querySelector('.label').textContent = theme === 'dark' ? 'claro' : 'escuro';
+    }
+  }
+
+  // determina tema inicial: saved -> system preference -> claro
+  function getInitialTheme(){
+    if(saved === 'dark' || saved === 'light') return saved;
+    // se não há preferencia salva, usa preferencia do sistema
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  // Alterna tema
+  function toggleTheme(){
+    const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('vistas-theme', next); } catch(e){ /* ignore */ }
+  }
+
+  // evento do botão
+  if(toggle){
+    toggle.addEventListener('click', toggleTheme);
+    // acessibilidade: tecla Enter/Space faz o toggle
+    toggle.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleTheme(); }
+    });
+  }
+
+  // aplica inicialmente
+  applyTheme( getInitialTheme() );
+})();
+</script>
+
+</body>
+</html>

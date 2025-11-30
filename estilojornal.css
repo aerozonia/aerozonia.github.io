@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+:root{
+  --paper: #ffffff;      /* folha clara */
+  --ink: #111111;
+  --muted: #666666;
+  --accent: #000000;
+  --container-w: 900px;
+
+  /* controle de elementos secundários */
+  --side-bg: #ffffff;
+  --side-border: #000000;
+  --feature-bg: #cccccc;
+  --timebox-bg: #ffffff;
+  --timebox-text: #000000;
+}
+
+/* Tema escuro (aplica quando [data-theme="dark"] no <html> ou <body>) */
+[data-theme="dark"]{
+  --paper: #0a0a0a;       /* folha escura */
+  --ink: #f5f5f5;         /* texto claro */
+  --muted: #bfbfbf;       /* cinza claro */
+  --accent: #ffffff;
+  --side-bg: #0f0f0f;
+  --side-border: #bfbfbf;
+  --feature-bg: #2b2b2b;
+  --timebox-bg: #111111;
+  --timebox-text: #f5f5f5;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+   background: var(--paper);
+  font-family: "Special Elite", "Courier New", monospace;
+  color: var(--ink);
+  min-height:100vh;
+  padding:0;
+}
+
+/* Folha única */
+.newspaper-wrap{
+  max-width:var(--container-w);
+  margin:auto;
+  background: var(--paper);
+  padding:32px;
+  line-height:1.55;
+}
+
+/* Masthead */
+.masthead{
+  text-align:center;
+  border-bottom:3px solid var(--accent);
+  padding-bottom:16px;
+  margin-bottom:20px;
+}
+.masthead .small{ font-size:0.75rem; letter-spacing:2px; color:var(--muted); }
+.masthead h1{ font-size:44px; letter-spacing:4px; text-transform:uppercase; margin:6px 0; color:var(--ink); }
+.masthead .tag{ font-size:0.9rem; font-style:italic; color:var(--muted); }
+
+/* Manchete */
+.headline{
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  border-top:2px solid var(--accent);
+  border-bottom:2px solid var(--accent);
+  padding:12px 0;
+  margin-bottom:14px;
+  color:var(--ink);
+}
+
+/* Meta */
+.meta{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.meta .dot{ width:5px; height:5px; background:var(--accent); border-radius:50%; margin-top:6px; }
+
+/* Conteúdo */
+.content{ display:grid; grid-template-columns: 1fr 320px; gap:28px; }
+
+/* Texto principal */
+.col-main{ column-count:2; column-gap:26px; font-size:1rem; text-align:justify; color:var(--ink); }
+.col-main p{ margin-bottom:16px; }
+
+/* Drop cap */
+.dropcap{ float:left; font-size:66px; font-weight:700; line-height:0.82; margin:4px 10px 0 0; color:var(--accent); }
+
+/* Coluna lateral */
+.col-side{ background: var(--side-bg); border-left:2px solid var(--side-border); padding-left:20px; }
+.feature-img{
+  width: 100%;
+  height: 320px;          /* desktop */
+  object-fit: cover;
+  object-position: center 30%; /* ajuste se precisar */
+  display: block;
+  border:1px solid var(--side-border);
+  margin-bottom:12px;
+}
+
+@media (max-width:650px){
+  .feature-img{ height: 260px; object-position: center 25%; }
+}
+@media (max-width:380px){
+  .feature-img{ height: 200px; object-position: center 20%; }
+}
+
+.caption{ font-size:0.72rem; text-align:center; color:var(--muted); margin-bottom:12px; }
+
+/* Time boxes */
+.time-boxes{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:14px; }
+.time-box{
+  background: var(--timebox-bg);
+  border:2px solid var(--side-border);
+  width:120px; padding:10px; text-align:center; font-weight:bold; font-size:0.9rem;
+  color: var(--timebox-text);
+}
+.time-box .small{ display:block; font-weight:normal; font-size:0.7rem; color:var(--muted); margin-top:4px; }
+
+/* Mini blocos */
+.mini{ font-size:0.8rem; color:var(--muted); }
+.mini .item{ border-top:1px solid var(--side-border); padding-top:8px; margin-top:8px; color:var(--muted); }
+
+/* Rodapé */
+.paper-footer{ margin-top:24px; border-top:2px solid var(--accent); display:flex; justify-content:space-between; font-size:0.75rem; padding-top:10px; color:var(--muted); }
+
+/* Responsividade */
+@media (max-width: 900px){ :root{ --container-w:720px; } }
+@media (max-width: 650px){
+  :root{ --container-w:520px; }
+  .content{ grid-template-columns:1fr; }
+  .col-main{ column-count:1; }
+  .col-side{ border-left:none; border-top:2px solid var(--side-border); padding-top:18px; padding-left:0; margin-top:24px; background:var(--side-bg); }
+  .masthead h1{ font-size:32px; }
+  .headline{ font-size:26px; }
+  .feature-thumb{ height:260px; }
+}
+@media (max-width: 380px){
+  :root{ --container-w:360px; }
+  .newspaper-wrap{ padding:18px; }
+  .masthead h1{ font-size:22px; }
+  .headline{ font-size:20px; }
+  .dropcap{ font-size:48px; }
+  .feature-thumb{ height:200px; }
+  .paper-footer{ flex-direction:column; gap:8px; text-align:center; }
+}
+
+/* ========================
+   BOTÃO DE ALTERNAR TEMA
+   ======================== */
+.theme-toggle{
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 999;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding:8px 10px;
+  border-radius:6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:0.82rem;
+  color: var(--muted);
+  cursor: pointer;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+  opacity: 0.85;
+}
+.theme-toggle:hover{ transform: translateY(-2px); opacity: 1; }
+
+.theme-toggle .icon{ font-size:0.95rem; line-height:1; }
+.theme-toggle .label{ text-transform:lowercase; color:var(--muted); }
+
+/* Botão no tema escuro: tornar borda mais visível */
+[data-theme="dark"] .theme-toggle{
+  border-color: rgba(255,255,255,0.08);
+  color: var(--muted);
+}
+
+/* Ajuste mobile para não ficar no caminho */
+@media (max-width: 380px){
+  .theme-toggle{ top: 10px; right: 10px; padding:7px 8px; font-size:0.75rem; }
+}
+
+
+/* ===== IMAGEM LATERAL: comportamento seguro e responsivo ===== */
+
+/* desktop: ocupa o espaço da coluna, preenche com crop */
+.feature-img{
+  width: 100%;
+  height: 320px;           /* box de exibição no desktop */
+  display: block;
+  object-fit: cover;       /* preenche o box sem distorcer */
+  object-position: center 30%; /* ajuste fino do foco vertical */
+  border:1px solid var(--side-border);
+  margin-bottom:12px;
+}
+
+/* tablet */
+@media (max-width: 650px){
+  .feature-img{
+    height: 260px;
+    object-position: center 25%;
+  }
+}
+
+/* mobile S10e / narrow: reduz proporcionalmente e NÃO corta importante */
+@media (max-width: 600px){
+  .feature-img{
+    height: auto;          /* permite que a img reduza proporcionalmente */
+    max-height: 320px;     /* evita que fique gigante */
+    width: 100%;
+    object-fit: contain;   /* garante que a imagem inteira seja visível */
+    object-position: center;
+    display: block;
+    margin-bottom:12px;
+  }
+}
+
+
+/* =========================
+   LINK "VOLTAR" - ESTILO JORNAL ESCURO/CLARO
+   ========================= */
+.back-link{
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 1200;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.88rem;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(255,255,255,0.85);   /* leve “folha” */
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  backdrop-filter: blur(4px);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  opacity: 0.9;
+}
+
+/* Hover / foco */
+.back-link:hover,
+.back-link:focus{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+  opacity: 1;
+  outline: none;
+}
+
+/* Acento do arrow */
+.back-arrow{
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.0rem;
+  line-height: 1;
+}
+
+/* Texto secundário */
+.back-text{
+  text-transform: lowercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+
+/* Acessibilidade: foco visível */
+.back-link:focus-visible{
+  outline: 3px solid rgba(0,0,0,0.12);
+  outline-offset: 3px;
+}
+
+/* Ajustes mobile: esconder texto e manter só o ícone para não atrapalhar */
+@media (max-width: 420px){
+  .back-link{
+    padding: 8px;
+    left: 10px;
+    top: 10px;
+    border-radius: 10px;
+  }
+  .back-text{ 
+    display: none;   /* só seta visível no mobile */
+  }
+  .back-arrow{
+    font-size: 1.05rem;
+  }
+}
+
+/* Tema escuro: inverter fundo / borda para legibilidade */
+[data-theme="dark"] .back-link{
+  background: rgba(10,10,10,0.6);
+  border-color: rgba(255,255,255,0.08);
+  color: var(--muted);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+[data-theme="dark"] .back-link .back-arrow{
+  color: var(--accent);
+}
+
+/* Variante minimal (se preferir só ícone em telas maiores): 
+   adicione a classe .back-link--minimal no HTML para ativar.
+*/
+.back-link--minimal .back-text{ display: none; padding-left:0; }
