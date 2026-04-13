@@ -3,7 +3,7 @@
 body{
 margin:0;
 padding:0;
-height:100vh;
+min-height:100vh;
 
 background-image:url("./imagens/backgoundArkania005.png");
 background-size:cover;
@@ -13,10 +13,10 @@ background-attachment:fixed;
 
 font-family:monospace;
 color:white;
-overflow:hidden;
+overflow:auto;
 }
-/* fundo com ruído */
 
+/* fundo com ruído */
 body::before{
 content:"";
 position:fixed;
@@ -27,10 +27,10 @@ height:100%;
 background:url("./imagens/tile01.gif");
 opacity:0.50;
 animation:noise 0.20s infinite;
+pointer-events:none; /* CORREÇÃO DO CLIQUE */
 }
 
 /* scanlines */
-
 body::after{
 content:"";
 position:fixed;
@@ -43,11 +43,10 @@ transparent 0px,
 transparent 2px,
 rgba(255,255,255,0.05) 3px
 );
-pointer-events:none;
+pointer-events:none; /* CORREÇÃO DO CLIQUE */
 }
 
 /* animação do ruído */
-
 @keyframes noise{
 0%{transform:translate(0,0)}
 10%{transform:translate(-5%,-5%)}
@@ -62,101 +61,92 @@ pointer-events:none;
 100%{transform:translate(5%,0)}
 }
 
-/* container central */
+/* MOBILE (base) */
+.container{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+z-index:1;
+}
+
+/* imagem */
+.imagem-central{
+width:320px;
+animation:glitch 0.98s infinite;
+}
+
+/* glitch */
+@keyframes glitch{
+0%{transform:translate(0) scale(1);}
+10%{transform:translate(-6px,2px) skewX(5deg);}
+20%{transform:translate(6px,-2px) scaleX(1.05);}
+30%{transform:translate(-4px,3px) skewY(4deg);}
+40%{transform:translate(4px,-3px);}
+50%{transform:scaleY(1.08);}
+60%{transform:translate(-5px,2px);}
+70%{transform:translate(5px,-2px) skewX(-5deg);}
+80%{transform:scaleX(0.25);}
+90%{transform:translate(-3px,1px);}
+100%{transform:translate(0) scale(1);}
+}
+
+/* botão entrar */
+.entrar{
+display:block;
+margin-top:80px;
+font-size:18px;
+text-decoration:none;
+color:white;
+}
+
+.entrar:hover{
+opacity:0.6;
+}
+
+/* rodapé */
+footer{
+text-align:center;
+font-size:12px;
+opacity:0.7;
+margin-bottom:10px;
+}
+
+/* 📱 landscape (celular deitado) */
+@media (orientation: landscape){
+.imagem-central{
+width:220px;
+}
+
+.entrar{
+margin-top:30px;
+}
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1024px){
 
 .container{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-text-align:center;
+min-height:auto;
+display:block;
+padding:0;
 }
-
-/* imagem central */
-
-/* imagem central */
 
 .imagem-central{
-width:320px;
-animation:glitch 0.98s infinite;
+width:500px;
 }
-
-/* glitch com distorção */
-
-@keyframes glitch{
-
-0%{
-transform:translate(0) scale(1);
-}
-
-10%{
-transform:translate(-6px,2px) skewX(5deg);
-}
-
-20%{
-transform:translate(6px,-2px) scaleX(1.05);
-}
-
-30%{
-transform:translate(-4px,3px) skewY(4deg);
-}
-
-40%{
-transform:translate(4px,-3px);
-}
-
-50%{
-transform:scaleY(1.08);
-}
-
-60%{
-transform:translate(-5px,2px);
-}
-
-70%{
-transform:translate(5px,-2px) skewX(-5deg);
-}
-
-80%{
-transform:scaleX(0.25);
-}
-
-90%{
-transform:translate(-3px,1px);
-}
-
-100%{
-transform:translate(0) scale(1);
-}
-
-}
-
-/* link entrar */
-
-.entrar{
-display:block;
-margin-top:80px; /* distância da imagem */
-font-size:18px;
-text-decoration:none;
-color:white;
-}
-.entrar:hover{
-opacity:0.6;
-}
-
-/* rodapé */
 
 footer{
 position:fixed;
 bottom:10px;
 width:100%;
-text-align:center;
-font-size:12px;
-opacity:0.7;
 }
-
-@media (min-width: 1024px){
-    .imagem-central{
-        width: 500px;
-    }
 }
