@@ -1,9 +1,22 @@
 @charset "UTF-8";
 
+/* esconder scrollbar corretamente (MOBILE + DESKTOP) */
+html, body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+  display: none;
+}
+
+/* ======================= */
+
 body{
 margin:0;
 padding:0;
-min-height:100vh;
+height:100vh;
 
 background-image:url("./imagens/backgoundArkania005.png");
 background-size:cover;
@@ -27,7 +40,7 @@ height:100%;
 background:url("./imagens/tile01.gif");
 opacity:0.50;
 animation:noise 0.20s infinite;
-pointer-events:none; /* CORREÇÃO DO CLIQUE */
+pointer-events:none;
 }
 
 /* scanlines */
@@ -43,7 +56,7 @@ transparent 0px,
 transparent 2px,
 rgba(255,255,255,0.05) 3px
 );
-pointer-events:none; /* CORREÇÃO DO CLIQUE */
+pointer-events:none;
 }
 
 /* animação do ruído */
@@ -61,17 +74,13 @@ pointer-events:none; /* CORREÇÃO DO CLIQUE */
 100%{transform:translate(5%,0)}
 }
 
-/* MOBILE (base) */
+/* container central */
 .container{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 text-align:center;
-padding:20px;
-position:relative;
-z-index:1;
 }
 
 /* imagem */
@@ -95,7 +104,7 @@ animation:glitch 0.98s infinite;
 100%{transform:translate(0) scale(1);}
 }
 
-/* botão entrar */
+/* botão */
 .entrar{
 display:block;
 margin-top:80px;
@@ -110,43 +119,17 @@ opacity:0.6;
 
 /* rodapé */
 footer{
-text-align:center;
-font-size:12px;
-opacity:0.7;
-margin-bottom:10px;
-}
-
-/* 📱 landscape (celular deitado) */
-@media (orientation: landscape){
-.imagem-central{
-width:220px;
-}
-
-.entrar{
-margin-top:30px;
-}
-}
-
-/* 💻 DESKTOP */
-@media (min-width: 1024px){
-
-.container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-min-height:auto;
-display:block;
-padding:0;
-}
-
-.imagem-central{
-width:500px;
-}
-
-footer{
 position:fixed;
 bottom:10px;
 width:100%;
+text-align:center;
+font-size:12px;
+opacity:0.7;
+}
+
+/* desktop */
+@media (min-width: 1024px){
+.imagem-central{
+width:500px;
 }
 }
