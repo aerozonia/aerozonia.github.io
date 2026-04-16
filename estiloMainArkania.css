@@ -48,16 +48,6 @@ body{
 
 }
 
-/*.banner img{
-
-    max-width:100%;
-    height:auto;
-
-}
-    */
-
-    /* BANNER */
-
 .banner{
     display:flex;
     justify-content:center;
@@ -67,48 +57,31 @@ body{
 .banner img{
 
     width:100%;
-    max-width:700px;   /* controla o tamanho máximo */
+    max-width:700px;
     height:auto;
 
-    border-radius:12px; /* bordas arredondadas */
+    border-radius:12px;
 
 }
 
 
-/* MARQUEE */
-
-/*.marquee{
-
-    margin-top:20px;
-    padding:10px;
-
-    background:rgba(0,0,0,0.6);
-    border-radius:6px;
-
-    font-size:18px;
-
-}
-
-*/
 /* MARQUEE */
 
 .marquee{
 
     width:100%;
-    max-width:700px;   /* mesma largura máxima do banner */
-    margin:20px auto;  /* centraliza */
+    max-width:700px;
+    margin:20px auto;
 
     padding:10px;
 
-    background:rgba(0, 0, 0, 0.199);
+    background:rgba(0, 0, 0, 0.614);
     border-radius:6px;
 
     font-size:18px;
 
 }
 
-
-/* MENU */
 
 /* MENU */
 
@@ -132,7 +105,7 @@ body{
 
     padding:10px 28px;
 
-    background:rgba(0, 0, 0, 0.199);
+    background:rgba(0, 0, 0, 0.548);
 
     color:#f2eef7;
 
@@ -155,8 +128,6 @@ body{
     background:#cb9cf7;
     color:white;
 
-    
-
 }
 
 
@@ -168,69 +139,6 @@ body{
 
 }
 
-/* CARDS */
-
-/*.cards{
-
-    margin-top:30px;
-
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-
-}
-
-.card{
-
-    width:160px;
-    text-decoration:none;
-    color:#a855f7;
-
-    transition:0.2s;
-
-}
-
-.card:hover{
-
-    transform:scale(1.05);
-
-}
-
-.card img{
-
-    width:100%;
-    border-radius:10px;
-
-}
-
-.card span{
-
-    display:block;
-    margin-top:8px;
-    font-size:18px;
-
-}
-*/
-
-
-/* TEXTO */
-
-/*.texto{
-
-    margin-top:30px;
-
-    padding:20px;
-
-    background:rgba(0,0,0,0.6);
-
-    border-radius:8px;
-
-    line-height:1.6;
-    text-align:justify;
-
-}
-*/
 
 /* CARDS */
 
@@ -271,7 +179,7 @@ body{
 
 .card:hover img{
 
-    filter:none; /* volta para a cor original */
+    filter:none;
     transform:scale(1.05);
 
 }
@@ -287,15 +195,18 @@ body{
 
 }
 
+
+/* TEXTO */
+
 .texto{
 
     width:100%;
-    max-width:700px;   /* mesma largura do banner e marquee */
-    margin:30px auto;  /* centraliza */
+    max-width:700px;
+    margin:30px auto;
 
     padding:20px;
 
-    background: rgba(0, 0, 0, 0.641);
+    background: rgba(0, 0, 0, 0.619);
     border-radius:8px;
 
     line-height:1.6;
@@ -313,24 +224,17 @@ body{
 }
 
 .voltar a{
-
-    color:rgba(0,0,0,0.6);
-    text-decoration:none;
-    font-size:18px;
-
-}
-.voltar a{
     color: #c09ff5;
     text-decoration:none;
     transition:0.2s;
 }
 
 .voltar a:hover{
-    color:#a855f7; /* muda a cor do texto ao passar o mouse */
+    color:#a855f7;
 }
 
 .voltar a:active{
-    color:#6d28d9; /* cor quando clica */
+    color:#6d28d9;
 }
 
 
@@ -347,9 +251,9 @@ footer{
 }
 
 
-/* ----------------------- */
+
 /* RESPONSIVIDADE */
-/* ----------------------- */
+
 
 
 /* TABLET */
@@ -420,11 +324,22 @@ footer{
 
 }
 
+/* 🔽 OCULTAR SCROLL MOBILE (VERSÃO FORTE) */
+
+html, body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+    display: none;
+}
+
 }
 
 
 /* CELULAR PEQUENO */
-/* Samsung Galaxy S10e */
 
 @media (max-width:400px){
 
@@ -465,4 +380,26 @@ footer{
 
 }
 
+}
+
+
+
+/* SCROLL PERSONALIZADO (DESKTOP) */
+
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c09ff5;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#a855f7;
 }
