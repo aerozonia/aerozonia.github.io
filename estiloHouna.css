@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY + BACKGROUND */
+body {
+  min-height: 100vh;
+  color: #fffb00;
+  text-align: justify;
+  background: 
+  linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+  url('./imagens/HounaBackGroundOfficial.png') no-repeat center center;
+
+background-size: cover;
+background-color: #000000;
+}
+
+/* MARQUEE */
+.marquee {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+.marquee span {
+  display: inline-block;
+  padding: 10px 0;
+  white-space: nowrap;
+  animation: scroll 15s linear infinite;
+  font-weight: bold;
+  color: #fffb00;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 20px;
+}
+
+h1 {
+   font-size: 3rem;
+  color: #fffb00;
+
+  text-shadow:
+    0 0 10px #fffb00,
+    0 0 20px #fffb00,
+    0 0 40px rgba(255, 251, 0, 0.6);
+}
+
+h2 {
+    color: #ffe066;
+
+  text-shadow:
+    0 0 5px rgba(255, 224, 102, 0.6);
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* TEXT */
+.text {
+  flex: 1;
+
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(30, 20, 10, 0.6)
+  );
+
+  backdrop-filter: blur(14px);
+
+  padding: 30px;
+  border-radius: 25px;
+
+  border: 1px solid rgba(255, 251, 0, 0.15);
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.8),
+    inset 0 0 20px rgba(255, 200, 0, 0.05);
+}
+
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* IMAGE */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  width: fit-content;
+
+  margin: 50px auto 20px;
+
+  padding: 12px 26px;
+  border-radius: 25px;
+
+  background: linear-gradient(135deg, #fff200, #ffb700);
+  color: #2a2100;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  box-shadow:
+    0 0 15px rgba(255, 230, 0, 0.5);
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 25px rgba(255, 230, 0, 0.9);
+}
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.336);
+  backdrop-filter: blur(10px);
+  margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .content {
+    flex-direction: column;
+  }
+
+  /* ORDEM CERTA */
+  .image {
+    order: 1;
+  }
+
+ .text {
+  order: 2;
+  text-align: justify;
+}
+
+  .header {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .image img {
+    max-width: 80%;
+  }
+
+  /* BACKGROUND MOBILE (preenche tudo) */
+  body {
+    background-size: cover;
+  }
+}
+
+/* MOBILE PEQUENO (Galaxy S10e) */
+@media (max-width: 400px) {
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+
+  filter: drop-shadow(0 0 20px rgba(255, 200, 0, 0.25));
+  transition: 0.4s;
+}
+
+.image img:hover {
+  transform: scale(1.03);
+}
+
+/* ========================= */
+/* SCROLL PERSONALIZADO */
+/* ========================= */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#fff200, #ffb700);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#fff700, #ffc400);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ffb700 #000000;
+}
+
+/* ========================= */
+/* MOBILE - ESCONDER SCROLL */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    -ms-overflow-style: none;  /* IE e Edge antigo */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+}
+
+/* ========================= */
+/* SCROLL SUAVE (opcional) */
+/* ========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================= */
+/* CORREÇÃO DEFINITIVA OVERFLOW */
+/* ========================= */
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* garante que nada ultrapasse */
+.container {
+  overflow-x: hidden;
+}
+
+/* corrige marquee (principal causa) */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* ========================= */
+/* MOBILE - esconder scroll SEM quebrar rolagem */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  html {
+    overflow-y: auto;
+  }
+
+}
+
+/* ========================= */
+/* S10e / MOBILE FINO */
+/* ========================= */
+
+@media (max-width: 400px) {
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+}
