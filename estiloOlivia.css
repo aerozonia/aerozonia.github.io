@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Playfair Display', serif;
+  color: #f5f5f5;
+text-align: justify;
+  background: url("./imagens/oliviaBackGroundOfficial.png") center center / cover no-repeat fixed;
+}
+
+/* OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+  radial-gradient(circle at center, rgba(0, 0, 0, 0.185), rgba(0,0,0,0.9));
+  z-index: -1;
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff2e92, #ff4da6);
+  border-radius: 10px;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4da6 #0d0d0d;
+}
+
+/* CONTAINER */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* VOLTAR */
+.back {
+  text-decoration: none;
+  color: #ff4da6;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.back:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff4da6;
+}
+
+/* LAYOUT */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* POLAROID */
+.image img {
+  width: clamp(320px, 40vw, 600px);
+  transform: rotate(-3deg);
+
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,1));
+  transition: 0.4s ease;
+}
+
+.image img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* TEXTO */
+.text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 520px;
+}
+
+/* TÍTULO */
+.text h1 {
+  margin-bottom: 10px;
+  line-height: 0.9;
+}
+
+/* OLIVIA */
+.title-main {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(48px, 6vw, 80px);
+  color: #ff2e92;
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 12px rgba(255,46,146,0.6),
+    0 0 30px rgba(255,46,146,0.3);
+}
+
+/* Summers */
+.title-sub {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(32px, 4vw, 52px);
+  margin-top: -22px;
+
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* TEXTO (AGORA EMO 🔥) */
+.text p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+  font-size: 19px;
+
+  color: #e6e6e6;
+
+  /* detalhe emo elegante */
+  letter-spacing: 0.3px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .image img {
+    width: clamp(260px, 85vw, 420px);
+  }
+
+  .text {
+    max-width: 90%;
+  }
+
+  .title-main {
+    font-size: 44px;
+  }
+
+  .title-sub {
+    font-size: 30px;
+    margin-top: -18px;
+  }
+
+  .text p {
+    font-size: 16px;
+  }
+
+  /* scroll invisível */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+  }
+}
