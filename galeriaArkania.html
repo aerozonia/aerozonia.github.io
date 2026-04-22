@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="estiloGaleriaArkania.css">
+    <link rel="shortcut icon" href="./imagens/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+<!-- BANNER -->
+<header class="banner">
+    <img src="./imagens/bannerGaleria005.png" alt="Banner">
+</header>
+
+<!-- GALERIA -->
+<main class="galeria">
+
+    <img src="./imagens/16assinado.png" alt="Criatura 1" data-desc=":: ʟᴇᴍᴏɴᴀᴅᴇ ::" onclick="abrirModal(this)">
+    <img src="imagens/img2.jpg" alt="Inseto 2" data-desc="Espécie mecânica desconhecida." onclick="abrirModal(this)">
+    <img src="imagens/img3.jpg" alt="Inseto 3" data-desc="Forma orgânica distorcida." onclick="abrirModal(this)">
+    <img src="imagens/img4.jpg" alt="Inseto 4" data-desc="Estrutura óssea incomum." onclick="abrirModal(this)">
+    <img src="imagens/img5.jpg" alt="Inseto 5" data-desc="Larva em repouso." onclick="abrirModal(this)">
+    <img src="imagens/img6.jpg" alt="Inseto 6" data-desc="Casca protetora segmentada." onclick="abrirModal(this)">
+    <img src="imagens/img7.jpg" alt="Inseto 7" data-desc="Movimento rápido e leve." onclick="abrirModal(this)">
+    <img src="imagens/img8.jpg" alt="Inseto 8" data-desc="Predador silencioso." onclick="abrirModal(this)">
+
+</main>
+
+<!-- MODAL -->
+<div id="modal">
+    <span id="fechar" onclick="fecharModal()">✕</span>
+    <img id="modal-img">
+    <p id="modal-desc"></p>
+</div>
+
+<!-- VOLTAR -->
+<div class="voltar">
+    <a href="mainArkania.html">← voltar</a>
+</div>
+
+<!-- RODAPÉ -->
+<footer>
+    aerozonia 00:00 - Todos os direitos reservados
+</footer>
+
+<script>
+function abrirModal(img) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modal-img").src = img.src;
+    document.getElementById("modal-desc").innerText = img.dataset.desc;
+}
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
