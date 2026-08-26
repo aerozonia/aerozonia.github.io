@@ -7,6 +7,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BARRA DE ROLAGEM — DESKTOP */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+    border: 2px solid #111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* FIREFOX */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #111;
+}
+
+/* BODY + FUNDO */
+body {
+    font-family: Arial, sans-serif;
+    /* ... */
+}
 
 /* BODY + FUNDO */
 body {
@@ -26,6 +63,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    
 
 }
 
@@ -34,8 +72,24 @@ body {
     height: auto;
     max-height: 350px;
     object-fit: contain;
+    display: block;
+
+    filter:
+        contrast(1.06)
+        brightness(1.03)
+        saturate(1.08)
+        drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+
+    transition: filter 0.3s ease;
 }
 
+.banner img:hover {
+    filter:
+        contrast(1.1)
+        brightness(1.07)
+        saturate(1.15)
+        drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+}
 /* GALERIA */
 .galeria {
     display: grid;
@@ -150,4 +204,38 @@ footer {
         top: 20px;
         right: 20px;
     }
+    /* RESPONSIVO */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 120px);
+        gap: 15px;
+    }
+
+    .galeria img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner img {
+        max-height: 280px;
+    }
+
+    #modal img {
+        max-width: 95%;
+    }
+
+    #fechar {
+        top: 20px;
+        right: 20px;
+    }
+
+    /* ESCONDER BARRA NO CELULAR */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html {
+        scrollbar-width: none;
+    }
+}
 }
